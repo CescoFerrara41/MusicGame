@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cjimss80xwwjd"]
+
+[ext_resource type="Script" uid="uid://cqw2yxrvmknf0" path="res://Scripts/FarmerAttacks/SeedAttack.cs" id="1_18kcb"]
+[ext_resource type="PackedScene" uid="uid://c31vgfc5ajdf3" path="res://Prefabs/FarmerAttacks/seed_bullet.tscn" id="2_75use"]
+
+[node name="SeedAttack" type="Node2D" unique_id=1145136289]
+script = ExtResource("1_18kcb")
+seedScene = ExtResource("2_75use")

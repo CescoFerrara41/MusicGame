@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dqjd3n4xn7q7x"]
+
+[ext_resource type="Script" uid="uid://laroq60g7wc4" path="res://Scripts/AcceleratingParryBullet.cs" id="1_r7sja"]
+[ext_resource type="Texture2D" uid="uid://yhccsm5kqlbo" path="res://Sprites/StarTopParrySubBullet2.png" id="2_kixx6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u27p1"]
+atlas = ExtResource("2_kixx6")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_grdg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u27p1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_u3eg5"]
+points = PackedVector2Array(-6, 0, 0, -8, 6, 0, 0, -6)
+
+[node name="StarSubParryBullet2" type="Area2D" unique_id=1399229806]
+script = ExtResource("1_r7sja")
+acceleration = 5.0
+rotationOffsetDegrees = 90.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1476089717]
+sprite_frames = SubResource("SpriteFrames_grdg4")
+offset = Vector2(0.5, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1781885178]
+position = Vector2(0, 2)
+shape = SubResource("ConvexPolygonShape2D_u3eg5")
+
+[node name="ParryArea" type="Area2D" parent="." unique_id=715392461]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParryArea" unique_id=875530482]
+position = Vector2(0, -3)
+shape = SubResource("ConvexPolygonShape2D_u3eg5")

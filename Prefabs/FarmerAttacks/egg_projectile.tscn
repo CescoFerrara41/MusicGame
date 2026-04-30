@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ccw27w85eovlg"]
+
+[ext_resource type="Script" uid="uid://1bx5gnmwrpl" path="res://Scripts/FarmerAttacks/EggProjectile.cs" id="1_8frpl"]
+[ext_resource type="Texture2D" uid="uid://c45qm0qlc375g" path="res://Sprites/EggProjectile.png" id="2_bb5oe"]
+[ext_resource type="PackedScene" uid="uid://opkei7jdut5x" path="res://Prefabs/FarmerAttacks/bird_projectile.tscn" id="2_mduhl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mduhl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14bow"]
+atlas = ExtResource("2_bb5oe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6a001"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14bow")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EggProjectile" type="Area2D" unique_id=1380630142]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_8frpl")
+birdProjectilePrefab = ExtResource("2_mduhl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=869894884]
+shape = SubResource("CapsuleShape2D_mduhl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=361838184]
+sprite_frames = SubResource("SpriteFrames_6a001")

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b6lse2c5hdcti"]
+
+[ext_resource type="Script" uid="uid://c34k7cfkanmc7" path="res://Scripts/FarmerAttacks/VineBullet.cs" id="1_ub12o"]
+[ext_resource type="Texture2D" uid="uid://5we5k23a13xi" path="res://Sprites/VineBullet.png" id="2_84ogi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmko2"]
+atlas = ExtResource("2_84ogi")
+region = Rect2(0, 0, 21, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca18v"]
+atlas = ExtResource("2_84ogi")
+region = Rect2(21, 0, 21, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x0fh"]
+atlas = ExtResource("2_84ogi")
+region = Rect2(42, 0, 21, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nshx3"]
+atlas = ExtResource("2_84ogi")
+region = Rect2(63, 0, 21, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ektju"]
+atlas = ExtResource("2_84ogi")
+region = Rect2(84, 0, 21, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bblqm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmko2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmko2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca18v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0x0fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nshx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ektju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ektju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ektju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ektju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ektju")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvad3"]
+size = Vector2(14, 12)
+
+[node name="VineBullet" type="Area2D" unique_id=1362866996]
+script = ExtResource("1_ub12o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=314180655]
+sprite_frames = SubResource("SpriteFrames_bblqm")
+offset = Vector2(0, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185210102]
+position = Vector2(-1, -6)
+shape = SubResource("RectangleShape2D_lvad3")

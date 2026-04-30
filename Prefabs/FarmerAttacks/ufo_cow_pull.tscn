@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dpdxhngijwcc2"]
+
+[ext_resource type="Script" uid="uid://8xtbvx4ss8ci" path="res://Scripts/FarmerAttacks/UfoCowPull.cs" id="1_vhkis"]
+[ext_resource type="PackedScene" uid="uid://fkavsuen1vb8" path="res://Prefabs/FarmerAttacks/cow_bullet.tscn" id="2_gk8qf"]
+[ext_resource type="Texture2D" uid="uid://dgc1bjb28rdgk" path="res://Sprites/miniUFO.png" id="2_kg03x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lppay"]
+atlas = ExtResource("2_kg03x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ve76d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lppay")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anm3c"]
+size = Vector2(4, 144)
+
+[node name="UFOCowPull" type="Node2D" unique_id=1296495191]
+script = ExtResource("1_vhkis")
+cowScene = ExtResource("2_gk8qf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1602554003]
+sprite_frames = SubResource("SpriteFrames_ve76d")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=133420129]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1337622455]
+position = Vector2(-1, 62)
+shape = SubResource("RectangleShape2D_anm3c")

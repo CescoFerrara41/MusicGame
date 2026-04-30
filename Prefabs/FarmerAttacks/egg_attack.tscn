@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://by2h3i238ay6q"]
+
+[ext_resource type="Script" uid="uid://bf82wku22054m" path="res://Scripts/FarmerAttacks/EggAttack.cs" id="1_6jv5b"]
+[ext_resource type="PackedScene" uid="uid://ccw27w85eovlg" path="res://Prefabs/FarmerAttacks/egg_projectile.tscn" id="2_86xb0"]
+[ext_resource type="PackedScene" uid="uid://bnnqc5ua5wmm1" path="res://Prefabs/FarmerAttacks/parry_egg.tscn" id="3_86xb0"]
+
+[node name="EggAttack" type="Node2D" unique_id=2094580795]
+script = ExtResource("1_6jv5b")
+eggProjectileScene = ExtResource("2_86xb0")
+parryEggProjectileScene = ExtResource("3_86xb0")

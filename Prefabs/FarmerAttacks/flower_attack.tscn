@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bxajsq5rqv654"]
+
+[ext_resource type="Script" uid="uid://clr5xlsdqfkfj" path="res://Scripts/FarmerAttacks/FlowerAttack.cs" id="1_bsyhc"]
+[ext_resource type="PackedScene" uid="uid://dhhejm6odxwdd" path="res://Prefabs/FarmerAttacks/flower_bullet.tscn" id="2_bsyhc"]
+[ext_resource type="PackedScene" uid="uid://c7um1ajy8k4yh" path="res://Prefabs/FarmerAttacks/flower_parry_bullet.tscn" id="3_m8aej"]
+
+[node name="FlowerAttack" type="Node2D" unique_id=137242643]
+script = ExtResource("1_bsyhc")
+flower = ExtResource("2_bsyhc")
+parryFlower = ExtResource("3_m8aej")
+crossings = 7.0

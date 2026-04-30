@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://m02aaxpo8gpa"]
+
+[ext_resource type="Script" uid="uid://dipgvwisu2svl" path="res://Scripts/WizardAttacks/BasicLaser.cs" id="1_nvbr7"]
+[ext_resource type="Texture2D" uid="uid://c5naqpo154lfm" path="res://Sprites/egglaser.png" id="2_n4ugp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmko2"]
+atlas = ExtResource("2_n4ugp")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca18v"]
+atlas = ExtResource("2_n4ugp")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x0fh"]
+atlas = ExtResource("2_n4ugp")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nshx3"]
+atlas = ExtResource("2_n4ugp")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ektju"]
+atlas = ExtResource("2_n4ugp")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bblqm"]
+atlas = ExtResource("2_n4ugp")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d244v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmko2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca18v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0x0fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nshx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ektju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bblqm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0bh4"]
+size = Vector2(20, 345)
+
+[node name="EggBasicLaser" type="Area2D" unique_id=155130379]
+script = ExtResource("1_nvbr7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2145218734]
+scale = Vector2(1, 5.359375)
+sprite_frames = SubResource("SpriteFrames_d244v")
+frame_progress = 0.8264006
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2045761844]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_u0bh4")

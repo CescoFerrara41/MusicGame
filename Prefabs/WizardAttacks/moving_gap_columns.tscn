@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://pq8a3m30lba6"]
+
+[ext_resource type="Script" uid="uid://bcmjuocsdsupw" path="res://Scripts/WizardAttacks/MovingGapColumns.cs" id="1_kih7b"]
+[ext_resource type="PackedScene" uid="uid://cu0m2m52bjwxl" path="res://Prefabs/WizardAttacks/walk_bullet.tscn" id="2_bpx5w"]
+
+[node name="MovingGapColumns" type="Node2D" unique_id=2007221331]
+script = ExtResource("1_kih7b")
+bulletScene = ExtResource("2_bpx5w")

@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://bbi1mbi8dd1c"]
+
+[ext_resource type="Script" uid="uid://caiilkknbtl8e" path="res://Scripts/PlayerController.cs" id="1_pxtgq"]
+[ext_resource type="Texture2D" uid="uid://dko8mikn55qlq" path="res://Sprites/32x MC.png" id="2_lhjh1"]
+[ext_resource type="Texture2D" uid="uid://b2d5amx8j8ras" path="res://Sprites/32x MC walk down.png" id="3_avnkg"]
+[ext_resource type="Texture2D" uid="uid://cdgm7fldga0bd" path="res://Sprites/32x MC walking left.png" id="4_5v5vu"]
+[ext_resource type="Texture2D" uid="uid://bxgqsklvh0j2h" path="res://Sprites/32x MC walk right.png" id="5_saowu"]
+[ext_resource type="Texture2D" uid="uid://d3l2cdnov8etm" path="res://Sprites/32x MC walk up.png" id="6_3le64"]
+[ext_resource type="Script" uid="uid://ckr25cedx22du" path="res://Scripts/Npc.cs" id="7_ejp2d"]
+[ext_resource type="Texture2D" uid="uid://b10bhsloohyg7" path="res://Sprites/32x wizard.png" id="8_1gqe0"]
+[ext_resource type="Script" uid="uid://b24dn6bd41ybx" path="res://Scripts/DialogueManager.cs" id="9_pqije"]
+[ext_resource type="Script" uid="uid://dwxt52uiq37mv" path="res://Scripts/CameraFollow2D.cs" id="10_lhjh1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3aeo"]
+atlas = ExtResource("3_avnkg")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wyu1"]
+atlas = ExtResource("3_avnkg")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c07c"]
+atlas = ExtResource("3_avnkg")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cgwh"]
+atlas = ExtResource("3_avnkg")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaow0"]
+atlas = ExtResource("4_5v5vu")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpfo2"]
+atlas = ExtResource("4_5v5vu")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb21e"]
+atlas = ExtResource("5_saowu")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aees8"]
+atlas = ExtResource("5_saowu")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mie3u"]
+atlas = ExtResource("6_3le64")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qy5o"]
+atlas = ExtResource("6_3le64")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nf3m"]
+atlas = ExtResource("6_3le64")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ocox"]
+atlas = ExtResource("6_3le64")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ys1qc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lhjh1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3aeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wyu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c07c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cgwh")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iaow0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpfo2")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb21e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aees8")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mie3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qy5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nf3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ocox")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8od7v"]
+size = Vector2(19, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpfo2"]
+size = Vector2(20, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c07c"]
+size = Vector2(20, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb21e"]
+size = Vector2(36, 44)
+
+[node name="Overworld" type="Node2D" unique_id=2136032163]
+
+[node name="PlayerController" type="CharacterBody2D" parent="." unique_id=1225781072]
+position = Vector2(123, 65)
+script = ExtResource("1_pxtgq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerController" unique_id=1852995637]
+sprite_frames = SubResource("SpriteFrames_ys1qc")
+animation = &"walk_left"
+frame_progress = 0.9096953
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerController" unique_id=1392918730]
+position = Vector2(-0.5, 14)
+shape = SubResource("RectangleShape2D_8od7v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerController" unique_id=971410329]
+root_node = NodePath("../..")
+
+[node name="InteractionArea" type="Area2D" parent="PlayerController" unique_id=728597909]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerController/InteractionArea" unique_id=340433239]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_qpfo2")
+
+[node name="NPC" type="StaticBody2D" parent="." unique_id=786354414]
+position = Vector2(197, 115)
+script = ExtResource("7_ejp2d")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC" unique_id=1744020474]
+texture = ExtResource("8_1gqe0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC" unique_id=1799354385]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_0c07c")
+
+[node name="Area2D" type="Area2D" parent="NPC" unique_id=763082272]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D" unique_id=131698914]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_yb21e")
+
+[node name="DialogueBox" type="CanvasLayer" parent="." unique_id=66085666 node_paths=PackedStringArray("NameLabel", "DialogueText", "Portrait", "ChoicesContainer")]
+script = ExtResource("9_pqije")
+NameLabel = NodePath("Panel/NameLabel")
+DialogueText = NodePath("Panel/DialogueText")
+Portrait = NodePath("Panel/Portrait")
+ChoicesContainer = NodePath("Panel/ResponseContainer")
+
+[node name="Panel" type="Panel" parent="DialogueBox" unique_id=1018442254]
+offset_left = 1.0
+offset_top = 139.0
+offset_right = 320.0
+offset_bottom = 179.0
+metadata/_edit_group_ = true
+
+[node name="NameLabel" type="Label" parent="DialogueBox/Panel" unique_id=1289241228]
+layout_mode = 0
+offset_top = 17.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Portrait" type="TextureRect" parent="DialogueBox/Panel" unique_id=882302590]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogueText" type="RichTextLabel" parent="DialogueBox/Panel" unique_id=716555813]
+layout_mode = 0
+offset_left = 54.0
+offset_right = 267.0
+offset_bottom = 40.0
+visible_characters = 0
+
+[node name="ResponseContainer" type="VBoxContainer" parent="DialogueBox/Panel" unique_id=1139469955]
+layout_mode = 0
+offset_left = 263.0
+offset_right = 319.0
+offset_bottom = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=499941886]
+script = ExtResource("10_lhjh1")
+TargetPath = NodePath("../PlayerController")

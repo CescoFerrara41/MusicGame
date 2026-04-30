@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgspyhe8btc2t"]
+
+[ext_resource type="Script" uid="uid://djhe3b7o3dhgh" path="res://Scripts/SheriffAttacks/FinalDrivingAttack.cs" id="1_egg6j"]
+
+[node name="FinalDrivingAttack" type="Node2D" unique_id=1965317934]
+script = ExtResource("1_egg6j")

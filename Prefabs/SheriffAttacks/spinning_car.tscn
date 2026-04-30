@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bbdm4owxtp277"]
+
+[ext_resource type="Script" uid="uid://dqtb86kwskrak" path="res://Scripts/SheriffAttacks/SpinningCar.cs" id="1_ftmba"]
+[ext_resource type="Texture2D" uid="uid://bbiclrumtpypd" path="res://Sprites/enemyCar.png" id="2_fhe5n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnv1h"]
+atlas = ExtResource("2_fhe5n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1xpx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnv1h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6asv2"]
+size = Vector2(10, 13)
+
+[node name="SpinningCar" type="Area2D" unique_id=187267667]
+script = ExtResource("1_ftmba")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1036632176]
+sprite_frames = SubResource("SpriteFrames_j1xpx")
+offset = Vector2(0.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1360849490]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_6asv2")

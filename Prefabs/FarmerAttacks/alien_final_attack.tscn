@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ox4l5fc3xac4"]
+
+[ext_resource type="Script" uid="uid://cuyfexn3ujd1k" path="res://Scripts/FarmerAttacks/AlienFinalAttack.cs" id="1_2uow1"]
+[ext_resource type="PackedScene" uid="uid://dc465gql6p2d7" path="res://Prefabs/FarmerAttacks/alien_boss.tscn" id="2_03ijk"]
+
+[node name="AlienFinalAttack" type="Node2D" unique_id=1062628102]
+script = ExtResource("1_2uow1")
+alienBossScene = ExtResource("2_03ijk")

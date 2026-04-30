@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dl4d3krqwf1t3"]
+
+[ext_resource type="Script" uid="uid://ctwh8btqjow4h" path="res://Scripts/SheriffAttacks/ElectrifiedWall.cs" id="1_yf7iv"]
+[ext_resource type="Texture2D" uid="uid://d0fah6y0e3o53" path="res://Sprites/ElectrifiedHorizWall.png" id="2_fyvnk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf7iv"]
+atlas = ExtResource("2_fyvnk")
+region = Rect2(0, 0, 25, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyvnk"]
+atlas = ExtResource("2_fyvnk")
+region = Rect2(100, 0, 25, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4s0v7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yf7iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyvnk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8gop"]
+size = Vector2(26, 3)
+
+[node name="HorizontalElectrifiedWall" type="Area2D" unique_id=1499622406]
+script = ExtResource("1_yf7iv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1531166497]
+sprite_frames = SubResource("SpriteFrames_4s0v7")
+frame_progress = 0.46550274
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=301172610]
+z_index = 2
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_m8gop")

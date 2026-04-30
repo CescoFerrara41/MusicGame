@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bko5q44csxe4b"]
+
+[ext_resource type="Script" uid="uid://s3j2m41rrm53" path="res://Scripts/SheriffAttacks/DashLine.cs" id="1_edjow"]
+[ext_resource type="Texture2D" uid="uid://bjyunej15p0nj" path="res://Sprites/WhitePixel.png" id="2_wrrdg"]
+
+[node name="DashLine" type="Node2D" unique_id=854372757]
+script = ExtResource("1_edjow")
+
+[node name="DashedLineSprite" type="Sprite2D" parent="." unique_id=1257294264]
+scale = Vector2(2.500001, 7.5)
+texture = ExtResource("2_wrrdg")
+region_enabled = true
+region_rect = Rect2(24, 24, 1, 1)

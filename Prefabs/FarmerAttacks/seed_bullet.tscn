@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c31vgfc5ajdf3"]
+
+[ext_resource type="Script" uid="uid://cru0m7hjr1jby" path="res://Scripts/FarmerAttacks/SeedBullet.cs" id="1_msdy6"]
+[ext_resource type="Texture2D" uid="uid://bungdg07aalk3" path="res://Sprites/SeedBullet.png" id="2_aw62s"]
+[ext_resource type="PackedScene" uid="uid://b6lse2c5hdcti" path="res://Prefabs/FarmerAttacks/vine_bullet.tscn" id="2_c3vhi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bblqm"]
+atlas = ExtResource("2_aw62s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d244v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bblqm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywhob"]
+size = Vector2(8, 6)
+
+[node name="SeedBullet" type="Area2D" unique_id=691782713]
+script = ExtResource("1_msdy6")
+vineScene = ExtResource("2_c3vhi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1026727691]
+sprite_frames = SubResource("SpriteFrames_d244v")
+offset = Vector2(1, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2129179607]
+shape = SubResource("RectangleShape2D_ywhob")

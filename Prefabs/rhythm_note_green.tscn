@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cwpgym4r20fhw"]
+
+[ext_resource type="Script" uid="uid://s28g20oeatpq" path="res://Scripts/RhythmNote.cs" id="1_5l5q1"]
+[ext_resource type="Texture2D" uid="uid://23h53vyrvewu" path="res://Sprites/GreenNote.png" id="2_5l5q1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qdd3i"]
+radius = 1.4142135
+
+[node name="RhythmNote" type="Node2D" unique_id=1749159453 node_paths=PackedStringArray("trail")]
+script = ExtResource("1_5l5q1")
+trail = NodePath("TrailSprite")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2135158069]
+texture = ExtResource("2_5l5q1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1035267287]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1150900557]
+shape = SubResource("CircleShape2D_qdd3i")
+
+[node name="TrailSprite" type="Sprite2D" parent="." unique_id=1922429451]
+visible = false
+texture = ExtResource("2_5l5q1")

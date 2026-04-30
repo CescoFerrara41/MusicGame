@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://opkei7jdut5x"]
+
+[ext_resource type="Script" uid="uid://bary2oc8bpyvr" path="res://Scripts/FarmerAttacks/BirdProjectile.cs" id="1_5mlk8"]
+[ext_resource type="Texture2D" uid="uid://be00jgjiduag4" path="res://Sprites/BirdProjectile.png" id="2_7j41b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74w0k"]
+radius = 4.0
+height = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlglb"]
+atlas = ExtResource("2_7j41b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjwht"]
+atlas = ExtResource("2_7j41b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rapdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlglb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjwht")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 7.0
+}]
+
+[node name="BirdProjectile" type="Area2D" unique_id=162934906]
+script = ExtResource("1_5mlk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=503578015]
+position = Vector2(-1, -0.5)
+shape = SubResource("CapsuleShape2D_74w0k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2020508325]
+sprite_frames = SubResource("SpriteFrames_rapdr")
+animation = &"Fly"

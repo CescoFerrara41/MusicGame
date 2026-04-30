@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bbrh18h678ar4"]
+
+[ext_resource type="Script" uid="uid://ddd7kjdh3yuof" path="res://Scripts/PlayerBullet.cs" id="1_kph0i"]
+[ext_resource type="Texture2D" uid="uid://blmx0re7tfqwt" path="res://Sprites/PlayerBullet3.png" id="2_jsamh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvad3"]
+size = Vector2(5.7142863, 5.714287)
+
+[node name="PlayerBullet3" type="Area2D" unique_id=969288447]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_kph0i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2070145549]
+texture = ExtResource("2_jsamh")
+offset = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1211020231]
+position = Vector2(0, 6.38621e-07)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_lvad3")

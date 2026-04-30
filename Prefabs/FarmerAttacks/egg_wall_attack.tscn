@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://42xh83025d48"]
+
+[ext_resource type="Script" uid="uid://bd67nbhmhxivm" path="res://Scripts/FarmerAttacks/EggWallAttack.cs" id="1_ufrro"]
+[ext_resource type="PackedScene" uid="uid://dnhkat585a4bv" path="res://Prefabs/bullet.tscn" id="2_c3avw"]
+[ext_resource type="PackedScene" uid="uid://d1tm7nbmd60na" path="res://Prefabs/FarmerAttacks/destroyable_egg.tscn" id="3_jnw53"]
+
+[node name="EggWallAttack" type="Node2D" unique_id=992397177]
+script = ExtResource("1_ufrro")
+normalBulletScene = ExtResource("2_c3avw")
+destroyableEggScene = ExtResource("3_jnw53")

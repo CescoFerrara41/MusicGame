@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bpskgou8dsver"]
+
+[ext_resource type="Script" uid="uid://ccn45sk7b16hy" path="res://Scripts/SheriffAttacks/StarBullet.cs" id="1_wsww5"]
+[ext_resource type="Texture2D" uid="uid://d3jx3ia8opus4" path="res://Sprites/MainStarBullet.png" id="2_6qa6n"]
+[ext_resource type="PackedScene" uid="uid://coy38w0d0jecc" path="res://Prefabs/SheriffAttacks/star_sub_bullet_3.tscn" id="2_c787y"]
+[ext_resource type="PackedScene" uid="uid://cew3dcmhgg3ri" path="res://Prefabs/SheriffAttacks/star_sub_bullet_2.tscn" id="3_uu1v7"]
+[ext_resource type="PackedScene" uid="uid://dn8rt1bddqbiu" path="res://Prefabs/SheriffAttacks/star_sub_bullet_1.tscn" id="4_bxi8c"]
+[ext_resource type="PackedScene" uid="uid://dnbjqfagly2g2" path="res://Prefabs/SheriffAttacks/star_sub_parry_bullet_3.tscn" id="5_xwoff"]
+[ext_resource type="PackedScene" uid="uid://dqjd3n4xn7q7x" path="res://Prefabs/SheriffAttacks/star_sub_parry_bullet_2.tscn" id="6_g74km"]
+[ext_resource type="PackedScene" uid="uid://b4qcbq8mjw8sy" path="res://Prefabs/SheriffAttacks/star_sub_parry_bullet_1.tscn" id="7_s4lcw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yom63"]
+atlas = ExtResource("2_6qa6n")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7ta3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yom63")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cpphu"]
+points = PackedVector2Array(0, -14, 5, -4, 15, -3, 7, 4, 11, 15, 9, 15, 0, 8, -9, 15, -11, 15, -7, 4, -15, -3, -5, -4)
+
+[node name="StarBullet" type="Area2D" unique_id=1264825937]
+script = ExtResource("1_wsww5")
+moveSpeed = 60.0
+rotateSpeed = 0.6
+projectileTopSpeed = 50.0
+bigBulletScene = ExtResource("2_c787y")
+mediumBulletScene = ExtResource("3_uu1v7")
+smallBulletScene = ExtResource("4_bxi8c")
+bigParryBulletScene = ExtResource("5_xwoff")
+mediumParryBulletScene = ExtResource("6_g74km")
+smallParryBulletScene = ExtResource("7_s4lcw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=911857559]
+sprite_frames = SubResource("SpriteFrames_s7ta3")
+offset = Vector2(0.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=316673080]
+shape = SubResource("ConvexPolygonShape2D_cpphu")

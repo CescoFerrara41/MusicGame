@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bnmlbg7qh083k"]
+
+[ext_resource type="Script" uid="uid://bdk1htouwvvy4" path="res://Scripts/Bullet.cs" id="1_sceje"]
+[ext_resource type="Texture2D" uid="uid://btll5qylhl64h" path="res://Sprites/BulletCar.png" id="2_o2pgs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3qgs"]
+size = Vector2(8, 4)
+
+[node name="BulletCar" type="Area2D" unique_id=1041622317]
+script = ExtResource("1_sceje")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=4521204]
+texture = ExtResource("2_o2pgs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1426538213]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_y3qgs")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bx6vmemolnmuq"]
+
+[ext_resource type="Script" uid="uid://dpevcef8y343t" path="res://Scripts/FarmerAttacks/UfoCowAttack.cs" id="1_yhwlk"]
+[ext_resource type="PackedScene" uid="uid://dpdxhngijwcc2" path="res://Prefabs/FarmerAttacks/ufo_cow_pull.tscn" id="2_sno0o"]
+
+[node name="UFOCowAttack" type="Node2D" unique_id=443141164]
+script = ExtResource("1_yhwlk")
+ufoCowPullScene = ExtResource("2_sno0o")

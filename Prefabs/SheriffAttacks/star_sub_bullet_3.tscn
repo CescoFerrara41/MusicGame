@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://coy38w0d0jecc"]
+
+[ext_resource type="Script" uid="uid://bhfrregkf5auj" path="res://Scripts/AcceleratingBullet.cs" id="1_onb6n"]
+[ext_resource type="Texture2D" uid="uid://cxn1rvwejkw2e" path="res://Sprites/StarTopSubBullet3.png" id="2_lh023"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnv1h"]
+atlas = ExtResource("2_lh023")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1xpx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnv1h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6asv2"]
+points = PackedVector2Array(-9, 0, 0, -12, 9, 0, 0, -10)
+
+[node name="StarSubBullet3" type="Area2D" unique_id=1318772808]
+script = ExtResource("1_onb6n")
+startSpeed = 35.0
+acceleration = 2.0
+rotationOffsetDegrees = 90.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2094810996]
+sprite_frames = SubResource("SpriteFrames_j1xpx")
+offset = Vector2(0.5, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=800971045]
+position = Vector2(0, 2)
+shape = SubResource("ConvexPolygonShape2D_6asv2")

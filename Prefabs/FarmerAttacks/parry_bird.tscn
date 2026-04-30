@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://djxemxdsd7drq"]
+
+[ext_resource type="Script" uid="uid://fktghuyjqycv" path="res://Scripts/FarmerAttacks/ParryBird.cs" id="1_nkm3a"]
+[ext_resource type="Texture2D" uid="uid://dqgqj8hojlxdj" path="res://Sprites/ParryBird.png" id="2_kqjud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lppay"]
+atlas = ExtResource("2_kqjud")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve76d"]
+atlas = ExtResource("2_kqjud")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_motn2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lppay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve76d")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3ya5"]
+radius = 4.0
+height = 9.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkm3a"]
+radius = 4.5
+height = 12.0
+
+[node name="ParryBird" type="Area2D" unique_id=610574414]
+script = ExtResource("1_nkm3a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=984406483]
+sprite_frames = SubResource("SpriteFrames_motn2")
+animation = &"Fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=242409562]
+position = Vector2(-1, -0.5)
+shape = SubResource("CapsuleShape2D_t3ya5")
+
+[node name="ParryArea" type="Area2D" parent="." unique_id=662423139]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParryArea" unique_id=1681818206]
+position = Vector2(1, -0.5)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_nkm3a")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ybkhtfekbpyj"]
+
+[ext_resource type="Script" uid="uid://bk2ut0eaj35b2" path="res://Scripts/WizardAttacks/CrissCrossBullets.cs" id="1_nmhkh"]
+[ext_resource type="PackedScene" uid="uid://dnhkat585a4bv" path="res://Prefabs/bullet.tscn" id="2_opukg"]
+[ext_resource type="PackedScene" uid="uid://dub34dqwpytbb" path="res://Prefabs/parry_bullet.tscn" id="3_opukg"]
+
+[node name="CrissCrossAttack" type="Node2D" unique_id=1671632736]
+script = ExtResource("1_nmhkh")
+bulletScene = ExtResource("2_opukg")
+parryBulletScene = ExtResource("3_opukg")

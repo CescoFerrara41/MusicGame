@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c6kni5f62l4w7"]
+
+[ext_resource type="Texture2D" uid="uid://bn0tbaysjgsu" path="res://Sprites/Hit Particle.png" id="1_wrtc3"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wrtc3"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[node name="PerfectParticle" type="GPUParticles2D" unique_id=399334188]
+amount = 20
+texture = ExtResource("1_wrtc3")
+lifetime = 0.4
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_wrtc3")

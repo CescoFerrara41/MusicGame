@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://2qmlrungq7v6"]
+
+[ext_resource type="Script" uid="uid://cp6nrh0rcndk0" path="res://Scripts/SheriffAttacks/ScopeAttack.cs" id="1_00mih"]
+[ext_resource type="PackedScene" uid="uid://dlgorau7rto6h" path="res://Prefabs/SheriffAttacks/scope_marker.tscn" id="2_uh50m"]
+[ext_resource type="PackedScene" uid="uid://bntpec36sae6p" path="res://Prefabs/SheriffAttacks/radial_bullet.tscn" id="3_gdm2y"]
+
+[node name="ScopeAttack" type="Node2D" unique_id=1017843332]
+script = ExtResource("1_00mih")
+scopeScene = ExtResource("2_uh50m")
+scopeBulletScene = ExtResource("3_gdm2y")

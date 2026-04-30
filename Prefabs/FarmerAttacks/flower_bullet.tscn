@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dhhejm6odxwdd"]
+
+[ext_resource type="Script" uid="uid://6djb3liugnav" path="res://Scripts/FarmerAttacks/FlowerBullet.cs" id="1_ur5h7"]
+[ext_resource type="Texture2D" uid="uid://cck2cdqvbd1f4" path="res://Sprites/FlowerBullet.png" id="2_ur5h7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nxya"]
+size = Vector2(12, 15)
+
+[node name="FlowerBullet" type="Area2D" unique_id=49679326]
+script = ExtResource("1_ur5h7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=407891164]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_1nxya")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=116669902]
+texture = ExtResource("2_ur5h7")

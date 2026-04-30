@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c2vb7e868tf1q"]
+
+[ext_resource type="Script" uid="uid://tpm5827n18w2" path="res://Scripts/HoldNote.cs" id="1_eytpv"]
+[ext_resource type="Texture2D" uid="uid://ddxs2sxcbs5dx" path="res://Sprites/BlueHoldRect.png" id="2_eytpv"]
+[ext_resource type="Texture2D" uid="uid://c11kl27h027iq" path="res://Sprites/BlueNote.png" id="3_njssa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o3jbo"]
+radius = 1.41
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_68ghu"]
+radius = 1.41
+
+[node name="HoldNoteBlue" type="Node2D" unique_id=1489257848]
+script = ExtResource("1_eytpv")
+
+[node name="Body" type="NinePatchRect" parent="." unique_id=1945500622]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -4.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eytpv")
+region_rect = Rect2(14, 14, 3, 3)
+metadata/_edit_use_anchors_ = true
+
+[node name="TopCap" type="Area2D" parent="." unique_id=2054271132]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopCap" unique_id=1977649423]
+shape = SubResource("CircleShape2D_o3jbo")
+
+[node name="Sprite2D" type="Sprite2D" parent="TopCap" unique_id=1663395584]
+texture = ExtResource("3_njssa")
+
+[node name="BottomCap" type="Area2D" parent="." unique_id=323249331]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomCap" unique_id=2115087205]
+shape = SubResource("CircleShape2D_68ghu")
+
+[node name="Sprite2D" type="Sprite2D" parent="BottomCap" unique_id=638076239]
+texture = ExtResource("3_njssa")

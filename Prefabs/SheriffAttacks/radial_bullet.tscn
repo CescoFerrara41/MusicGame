@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bntpec36sae6p"]
+
+[ext_resource type="Script" uid="uid://ryudgrehlxdu" path="res://Scripts/SheriffAttacks/RadialBullet.cs" id="1_lvi00"]
+[ext_resource type="Texture2D" uid="uid://r5gh4oxxl10g" path="res://Sprites/RadialBullet.png" id="2_ffomr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnv1h"]
+atlas = ExtResource("2_ffomr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1xpx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnv1h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6asv2"]
+size = Vector2(6, 9)
+
+[node name="RadialBullet" type="Area2D" unique_id=1761200533]
+script = ExtResource("1_lvi00")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1935598887]
+sprite_frames = SubResource("SpriteFrames_j1xpx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1356052188]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_6asv2")

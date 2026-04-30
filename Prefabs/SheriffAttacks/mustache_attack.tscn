@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://co6lmwc330tpa"]
+
+[ext_resource type="Script" uid="uid://bbpeydu8poigw" path="res://Scripts/SheriffAttacks/MustacheAttack.cs" id="1_68pks"]
+[ext_resource type="PackedScene" uid="uid://c3lwdoj584xve" path="res://Prefabs/SheriffAttacks/mustacheLeft.tscn" id="2_r8yoe"]
+[ext_resource type="PackedScene" uid="uid://1j60xfrvcsrn" path="res://Prefabs/SheriffAttacks/mustache_right.tscn" id="3_r8yoe"]
+
+[node name="MustacheAttack" type="Node2D" unique_id=1994917817]
+script = ExtResource("1_68pks")
+leftMustacheScene = ExtResource("2_r8yoe")
+rightMustacheScene = ExtResource("3_r8yoe")

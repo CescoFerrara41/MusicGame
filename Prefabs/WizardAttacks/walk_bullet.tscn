@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cu0m2m52bjwxl"]
+
+[ext_resource type="Script" uid="uid://bdk1htouwvvy4" path="res://Scripts/Bullet.cs" id="1_wnsjr"]
+[ext_resource type="Texture2D" uid="uid://ct3xwc0gdgl6y" path="res://Sprites/WalkBullet.png" id="2_jgxpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1qka"]
+atlas = ExtResource("2_jgxpm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anm3c"]
+atlas = ExtResource("2_jgxpm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3l1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1qka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anm3c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10b66"]
+size = Vector2(3, 7)
+
+[node name="WalkBullet" type="Area2D" unique_id=1863709736]
+script = ExtResource("1_wnsjr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=135201913]
+sprite_frames = SubResource("SpriteFrames_w3l1i")
+frame_progress = 0.0015647729
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1416837754]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_10b66")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bww33hcywtxxl"]
+
+[ext_resource type="Script" uid="uid://1utcweff5jlq" path="res://Scripts/WizardAttacks/TwoPortalAttack.cs" id="1_fcluq"]
+[ext_resource type="PackedScene" uid="uid://cu0m2m52bjwxl" path="res://Prefabs/WizardAttacks/walk_bullet.tscn" id="2_nj3nj"]
+[ext_resource type="PackedScene" uid="uid://1cb52mjarquy" path="res://Prefabs/WizardAttacks/portal.tscn" id="3_7hepc"]
+
+[node name="TwoPortalAttack" type="Node2D" unique_id=698491842]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_fcluq")
+bulletScene = ExtResource("2_nj3nj")
+portalScene = ExtResource("3_7hepc")

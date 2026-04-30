@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dr6mrbedahqy7"]
+
+[ext_resource type="Script" uid="uid://dpsoim07482il" path="res://Scripts/ParryBullet.cs" id="1_bylal"]
+[ext_resource type="Texture2D" uid="uid://8i0yxtgrxohv" path="res://Sprites/ParryBulletCar.png" id="2_psju8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhrs7"]
+size = Vector2(8, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1ope"]
+size = Vector2(13, 6)
+
+[node name="ParryBulletCar" type="Area2D" unique_id=338804352]
+script = ExtResource("1_bylal")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=222755002]
+texture = ExtResource("2_psju8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=93254360]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_xhrs7")
+
+[node name="ParryArea" type="Area2D" parent="." unique_id=281200963]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParryArea" unique_id=235952887]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_k1ope")

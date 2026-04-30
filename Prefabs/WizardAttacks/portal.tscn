@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://1cb52mjarquy"]
+
+[ext_resource type="Script" uid="uid://cpgukt6fxr0wp" path="res://Scripts/WizardAttacks/Portal.cs" id="1_4pj7m"]
+[ext_resource type="PackedScene" uid="uid://cu0m2m52bjwxl" path="res://Prefabs/WizardAttacks/walk_bullet.tscn" id="2_iytyp"]
+[ext_resource type="Texture2D" uid="uid://cq6tfeh3pk1kj" path="res://Sprites/Portal.png" id="3_phqqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm5o2"]
+atlas = ExtResource("3_phqqt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq6un"]
+atlas = ExtResource("3_phqqt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv4jf"]
+atlas = ExtResource("3_phqqt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6usen"]
+atlas = ExtResource("3_phqqt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylrcm"]
+atlas = ExtResource("3_phqqt")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54dab"]
+atlas = ExtResource("3_phqqt")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e354"]
+atlas = ExtResource("3_phqqt")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kxyf"]
+atlas = ExtResource("3_phqqt")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b1qka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm5o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq6un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv4jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6usen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylrcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54dab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e354")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kxyf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anm3c"]
+size = Vector2(56, 6)
+
+[node name="Portal" type="Area2D" unique_id=919107696]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_4pj7m")
+bulletScene = ExtResource("2_iytyp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=451352907]
+sprite_frames = SubResource("SpriteFrames_b1qka")
+frame_progress = 0.6246605
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=21095967]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_anm3c")

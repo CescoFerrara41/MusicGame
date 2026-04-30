@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cy2ifrtqa4na1"]
+
+[ext_resource type="Script" uid="uid://b3epwhyuelfld" path="res://Scripts/WizardAttacks/LaserAttack.cs" id="1_in2at"]
+[ext_resource type="PackedScene" uid="uid://cejhhpoluf7dy" path="res://Prefabs/WizardAttacks/warning.tscn" id="2_8xd4n"]
+[ext_resource type="PackedScene" uid="uid://337p4x55vxwv" path="res://Prefabs/WizardAttacks/red_laser.tscn" id="3_x4muv"]
+[ext_resource type="PackedScene" uid="uid://b7snk3uxct2ow" path="res://Prefabs/WizardAttacks/yellow_laser.tscn" id="4_kop11"]
+[ext_resource type="PackedScene" uid="uid://gftgtcjnigv0" path="res://Prefabs/WizardAttacks/green_laser.tscn" id="5_voum1"]
+
+[node name="LaserAttack" type="Node2D" unique_id=1525368419]
+script = ExtResource("1_in2at")
+warningScene = ExtResource("2_8xd4n")
+redLaserScene = ExtResource("3_x4muv")
+yellowLaserScene = ExtResource("4_kop11")
+greenLaserScene = ExtResource("5_voum1")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dvdctremojq2c"]
+
+[ext_resource type="Script" uid="uid://chfvs4v6p4asr" path="res://Scripts/TestAttack.cs" id="1_d651u"]
+[ext_resource type="PackedScene" uid="uid://dnbjqfagly2g2" path="res://Prefabs/SheriffAttacks/star_sub_parry_bullet_3.tscn" id="2_hhdho"]
+
+[node name="TestAttack" type="Node2D" unique_id=758579432]
+script = ExtResource("1_d651u")
+bullet = ExtResource("2_hhdho")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bbqcj6vjmk6v2"]
+
+[ext_resource type="Script" uid="uid://c63t3ugm12sc3" path="res://Scripts/SheriffAttacks/TaserAttack.cs" id="1_afu1g"]
+[ext_resource type="PackedScene" uid="uid://2ci0rngeridw" path="res://Prefabs/SheriffAttacks/taser_probe.tscn" id="2_kearx"]
+[ext_resource type="PackedScene" uid="uid://dl4d3krqwf1t3" path="res://Prefabs/SheriffAttacks/horizontal_electrified_wall.tscn" id="3_nd2pt"]
+[ext_resource type="PackedScene" uid="uid://c57lepvdgfjyt" path="res://Prefabs/SheriffAttacks/vertical_electrified_wall.tscn" id="4_o0hc2"]
+
+[node name="TaserAttack" type="Node2D" unique_id=2099162761]
+script = ExtResource("1_afu1g")
+taserProbeScene = ExtResource("2_kearx")
+horizontalWallScene = ExtResource("3_nd2pt")
+verticalWallScene = ExtResource("4_o0hc2")

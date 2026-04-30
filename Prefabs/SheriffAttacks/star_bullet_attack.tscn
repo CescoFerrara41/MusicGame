@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dp3i01qe4fydq"]
+
+[ext_resource type="Script" uid="uid://c4a8413fxptc3" path="res://Scripts/SheriffAttacks/StarBulletAttack.cs" id="1_klui8"]
+[ext_resource type="PackedScene" uid="uid://bpskgou8dsver" path="res://Prefabs/SheriffAttacks/star_bullet.tscn" id="2_ed82m"]
+
+[node name="StarBulletAttack" type="Node2D" unique_id=23858604]
+script = ExtResource("1_klui8")
+starBulletScene = ExtResource("2_ed82m")

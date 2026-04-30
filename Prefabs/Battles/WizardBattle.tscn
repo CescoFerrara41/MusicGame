@@ -1,0 +1,1230 @@
+[gd_scene format=3 uid="uid://b57ymqs14pd46"]
+
+[ext_resource type="Script" uid="uid://dnt0tpl0cvtux" path="res://Scripts/BattleNarrator.cs" id="1_i2boy"]
+[ext_resource type="Script" uid="uid://bmvmtd36k76t5" path="res://Scripts/BattleMenu.cs" id="2_b54hw"]
+[ext_resource type="Texture2D" uid="uid://5tn3pjn8357m" path="res://Sprites/WizardIdle.png" id="2_uvxwf"]
+[ext_resource type="Texture2D" uid="uid://bmb2xj4337t3h" path="res://Sprites/FightButtonUnselected.png" id="3_w88gu"]
+[ext_resource type="Texture2D" uid="uid://c5ewmmd5cil4j" path="res://Sprites/FightButton.png" id="4_gwm06"]
+[ext_resource type="Texture2D" uid="uid://lae68rv15pni" path="res://Sprites/SpecialButtonUnselected.png" id="5_6euan"]
+[ext_resource type="Texture2D" uid="uid://blwbjahn2vo2r" path="res://Sprites/SpecialButton.png" id="6_u5at7"]
+[ext_resource type="Texture2D" uid="uid://bv7ksvfplan55" path="res://Sprites/ItemButtonUnselected.png" id="7_tibx4"]
+[ext_resource type="Texture2D" uid="uid://c8rn1o5wqkaxn" path="res://Sprites/ItemButton.png" id="8_byq8r"]
+[ext_resource type="Texture2D" uid="uid://dvgvnxf2tfu82" path="res://Sprites/RunButtonUnselected.png" id="9_suigo"]
+[ext_resource type="Texture2D" uid="uid://csu7um4uumvn" path="res://Sprites/RunButton.png" id="10_xhe3a"]
+[ext_resource type="Texture2D" uid="uid://phi3f8esmva4" path="res://Sprites/BackgroundBar.png" id="11_wgp5g"]
+[ext_resource type="Script" uid="uid://c1tux3w1um35w" path="res://Scripts/HealthUI.cs" id="12_wfqjn"]
+[ext_resource type="Texture2D" uid="uid://bso6buctagbhv" path="res://Sprites/HpBack.png" id="13_pgtvp"]
+[ext_resource type="Texture2D" uid="uid://b56tjcsn6nx3i" path="res://Sprites/HpFrame.png" id="14_v6006"]
+[ext_resource type="Texture2D" uid="uid://b6g6h46bh3w4i" path="res://Sprites/HpFront.png" id="15_luesj"]
+[ext_resource type="Script" uid="uid://bxcsxys6s1mqh" path="res://Scripts/BattleController.cs" id="16_m2e5g"]
+[ext_resource type="Script" uid="uid://jw536pa761eu" path="res://Scripts/EnemyManager.cs" id="17_llcrh"]
+[ext_resource type="Script" uid="uid://c7ep660osmltv" path="res://Scripts/EnemyDisplay.cs" id="18_13d5a"]
+[ext_resource type="Script" uid="uid://dhgxjbswxiu15" path="res://Scripts/AttackManager.cs" id="20_byktf"]
+[ext_resource type="PackedScene" uid="uid://ybkhtfekbpyj" path="res://Prefabs/WizardAttacks/criss_cross_attack.tscn" id="21_kw6pl"]
+[ext_resource type="PackedScene" uid="uid://bn1d7cdkbusxh" path="res://Prefabs/WizardAttacks/two_column_walls.tscn" id="22_arjvi"]
+[ext_resource type="PackedScene" uid="uid://bww33hcywtxxl" path="res://Prefabs/WizardAttacks/two_portal_attack.tscn" id="23_aslon"]
+[ext_resource type="PackedScene" uid="uid://bxvhnfkmde1l0" path="res://Prefabs/WizardAttacks/rapid_portal_attack.tscn" id="24_7twe8"]
+[ext_resource type="PackedScene" uid="uid://cy2ifrtqa4na1" path="res://Prefabs/WizardAttacks/laser_attack.tscn" id="25_l23q8"]
+[ext_resource type="PackedScene" uid="uid://cjimss80xwwjd" path="res://Prefabs/FarmerAttacks/seed_attack.tscn" id="26_1sgst"]
+[ext_resource type="Script" uid="uid://3unw3kjqxd5s" path="res://Scripts/RhythmManager.cs" id="27_vde6v"]
+[ext_resource type="Texture2D" uid="uid://dp3sia831dfpn" path="res://Sprites/HitTrack.png" id="28_yctah"]
+[ext_resource type="Script" uid="uid://c7c88mxty2t8a" path="res://Scripts/LaneController.cs" id="29_cw0lr"]
+[ext_resource type="PackedScene" uid="uid://cwpgym4r20fhw" path="res://Prefabs/rhythm_note_green.tscn" id="30_22o38"]
+[ext_resource type="PackedScene" uid="uid://dggy2sqd2atg7" path="res://Prefabs/hold_note_green.tscn" id="31_2gqwg"]
+[ext_resource type="Script" uid="uid://bv4xalocl8ho6" path="res://Scripts/HitZone.cs" id="32_gnht8"]
+[ext_resource type="Texture2D" uid="uid://ddbdum8rwjja4" path="res://Sprites/HitZone.png" id="33_e03o3"]
+[ext_resource type="Texture2D" uid="uid://dx5rwpk43m11j" path="res://Sprites/GreenHitAnimation.png" id="34_wktpo"]
+[ext_resource type="Texture2D" uid="uid://blrsetbipvd28" path="res://Sprites/GreenSparkle.png" id="35_mt067"]
+[ext_resource type="Texture2D" uid="uid://bihotxvkakhjd" path="res://Sprites/GreenHit.png" id="36_xdqq5"]
+[ext_resource type="Texture2D" uid="uid://be72elsxocih3" path="res://Sprites/GreenHitBottom.png" id="37_wt0fq"]
+[ext_resource type="Script" uid="uid://dbfqeng2s5gsv" path="res://Scripts/HitBottom.cs" id="38_0wdup"]
+[ext_resource type="Script" uid="uid://kclif8euqov" path="res://Scripts/LaneHitZone.cs" id="39_mjgeo"]
+[ext_resource type="PackedScene" uid="uid://ca4bkp27atrcw" path="res://Prefabs/rhythm_note_blue.tscn" id="40_mldds"]
+[ext_resource type="PackedScene" uid="uid://c2vb7e868tf1q" path="res://Prefabs/hold_note_blue.tscn" id="41_5ax7q"]
+[ext_resource type="Texture2D" uid="uid://ptalkjl1u0ql" path="res://Sprites/BlueHitAnimation.png" id="42_pjb41"]
+[ext_resource type="Texture2D" uid="uid://y7y1ofhykasd" path="res://Sprites/BlueSparkle.png" id="43_edo48"]
+[ext_resource type="Texture2D" uid="uid://7sedpxypqi8q" path="res://Sprites/BlueHit.png" id="44_50iif"]
+[ext_resource type="Texture2D" uid="uid://mp2auxg4ae34" path="res://Sprites/BlueHitBottom.png" id="45_d5mdm"]
+[ext_resource type="Texture2D" uid="uid://blmnlqcikqvv7" path="res://Sprites/blackPixel.png" id="46_1pqbt"]
+[ext_resource type="Script" uid="uid://7snywnrs41sh" path="res://Scripts/JudgementDisplay.cs" id="47_bd6wx"]
+[ext_resource type="Texture2D" uid="uid://bnxvcpkyid0bs" path="res://Sprites/Hit.png" id="48_x2dae"]
+[ext_resource type="Texture2D" uid="uid://6wo7qq5i4dos" path="res://Sprites/Miss.png" id="49_gfsqs"]
+[ext_resource type="Texture2D" uid="uid://cxnw47k41uk4j" path="res://Sprites/Perfect.png" id="50_kqo04"]
+[ext_resource type="Script" uid="uid://dk6p8qlshrc5s" path="res://Scripts/BattleBox.cs" id="51_f77kw"]
+[ext_resource type="Texture2D" uid="uid://dqnpy2ytfowo" path="res://Sprites/WhiteDot.png" id="52_vmvcx"]
+[ext_resource type="Script" uid="uid://dya0nnnkm4qhv" path="res://Scripts/ScreenShake.cs" id="53_jkf82"]
+[ext_resource type="Script" uid="uid://ck25kxyirmemf" path="res://Scripts/PlayerSoul.cs" id="54_wbkop"]
+[ext_resource type="PackedScene" uid="uid://c03fey1vfwjb" path="res://Prefabs/player_bullet_1.tscn" id="55_nn1pt"]
+[ext_resource type="PackedScene" uid="uid://sl0t5xjymibp" path="res://Prefabs/player_bullet_2.tscn" id="56_7xd8w"]
+[ext_resource type="PackedScene" uid="uid://bbrh18h678ar4" path="res://Prefabs/player_bullet_3.tscn" id="57_txusw"]
+[ext_resource type="Texture2D" uid="uid://gr0lrxuyr86g" path="res://Sprites/soulShipAnimation.png" id="58_ed5q1"]
+[ext_resource type="Texture2D" uid="uid://bb5eyskrars5v" path="res://Sprites/SoulShip.png" id="59_3ross"]
+[ext_resource type="Texture2D" uid="uid://bbodrn60yyk7i" path="res://Sprites/BluePlayerSoul.png" id="60_epsaf"]
+[ext_resource type="AudioStream" uid="uid://3vwkiabfv5wy" path="res://Music/WizardBattleNew.mp3" id="61_rx6j3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2boy"]
+atlas = ExtResource("2_uvxwf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b54hw"]
+atlas = ExtResource("2_uvxwf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w88gu"]
+atlas = ExtResource("2_uvxwf")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwm06"]
+atlas = ExtResource("2_uvxwf")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6euan"]
+atlas = ExtResource("2_uvxwf")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_763g1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2boy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b54hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w88gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwm06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6euan")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slw5m"]
+bg_color = Color(0.23392546, 0.23392549, 0.23392531, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5dl4"]
+bg_color = Color(0, 0.50992996, 0.15583143, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8yuy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvad3"]
+atlas = ExtResource("33_e03o3")
+region = Rect2(0, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i85nf"]
+atlas = ExtResource("34_wktpo")
+region = Rect2(0, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv8t7"]
+atlas = ExtResource("34_wktpo")
+region = Rect2(32, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qpuu"]
+atlas = ExtResource("34_wktpo")
+region = Rect2(64, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wrrj"]
+atlas = ExtResource("34_wktpo")
+region = Rect2(96, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kv7o"]
+atlas = ExtResource("34_wktpo")
+region = Rect2(128, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq6un"]
+atlas = ExtResource("35_mt067")
+region = Rect2(0, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv4jf"]
+atlas = ExtResource("35_mt067")
+region = Rect2(32, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6usen"]
+atlas = ExtResource("35_mt067")
+region = Rect2(64, 0, 32, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ky1ns"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvad3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_e03o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i85nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv8t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qpuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wrrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kv7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_e03o3")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq6un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv4jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6usen")
+}],
+"loop": true,
+"name": &"sparkle",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85lru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_xdqq5")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_wt0fq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvtps"]
+size = Vector2(20, 5.9534874)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brqcw"]
+size = Vector2(20, 25.325638)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yts5r"]
+size = Vector2(20, 6.279068)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywhob"]
+atlas = ExtResource("33_e03o3")
+region = Rect2(0, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pe8s"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(0, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnjwk"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(32, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npgqm"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(64, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8yuy"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(96, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1a0y"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(128, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylrcm"]
+atlas = ExtResource("43_edo48")
+region = Rect2(0, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54dab"]
+atlas = ExtResource("43_edo48")
+region = Rect2(32, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e354"]
+atlas = ExtResource("43_edo48")
+region = Rect2(64, 0, 32, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xm5o2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywhob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_e03o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pe8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnjwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npgqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8yuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1a0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_e03o3")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylrcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54dab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e354")
+}],
+"loop": true,
+"name": &"sparkle",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6f0a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_50iif")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_d5mdm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5322f"]
+atlas = ExtResource("33_e03o3")
+region = Rect2(0, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3qgs"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(0, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf5x2"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(32, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn3op"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(64, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c131y"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(96, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t5wh"]
+atlas = ExtResource("42_pjb41")
+region = Rect2(128, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kxyf"]
+atlas = ExtResource("43_edo48")
+region = Rect2(0, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1qka"]
+atlas = ExtResource("43_edo48")
+region = Rect2(32, 0, 32, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anm3c"]
+atlas = ExtResource("43_edo48")
+region = Rect2(64, 0, 32, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aq6un"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5322f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_e03o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3qgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf5x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn3op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c131y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t5wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_e03o3")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kxyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1qka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anm3c")
+}],
+"loop": true,
+"name": &"sparkle",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ci1qd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_50iif")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_d5mdm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8p3jf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_xdqq5")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_wt0fq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3l1i"]
+atlas = ExtResource("48_x2dae")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10b66"]
+atlas = ExtResource("49_gfsqs")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwlpw"]
+atlas = ExtResource("50_kqo04")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c131y"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3l1i")
+}],
+"loop": true,
+"name": &"good",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10b66")
+}],
+"loop": true,
+"name": &"miss",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwlpw")
+}],
+"loop": true,
+"name": &"perfect",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky1ns"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fnjwk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npgqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1a0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm5o2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pe8s"]
+size = Vector2(10.833333, 9.166666)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve76d"]
+atlas = ExtResource("58_ed5q1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_motn2"]
+atlas = ExtResource("58_ed5q1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3ya5"]
+atlas = ExtResource("58_ed5q1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgxlc"]
+atlas = ExtResource("58_ed5q1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xklb"]
+atlas = ExtResource("59_3ross")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lppay"]
+atlas = ExtResource("60_epsaf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ve76d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve76d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_motn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3ya5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgxlc")
+}],
+"loop": false,
+"name": &"Battleship",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xklb")
+}],
+"loop": true,
+"name": &"StaticShip",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lppay")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WizardBattle" type="Node2D" unique_id=1781588548]
+
+[node name="BattleUI" type="Node2D" parent="." unique_id=1319062324]
+
+[node name="BattleNarrator" type="Node2D" parent="BattleUI" unique_id=613251488 node_paths=PackedStringArray("DialogueText")]
+z_index = 3
+position = Vector2(160, 113)
+script = ExtResource("1_i2boy")
+DialogueText = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BattleUI/BattleNarrator" unique_id=63701726]
+offset_left = -148.0
+offset_top = -20.0
+offset_right = 152.0
+offset_bottom = 34.0
+theme_override_font_sizes/normal_font_size = 8
+
+[node name="BattleMenu" type="Control" parent="BattleUI" unique_id=1389805184 node_paths=PackedStringArray("FightIcon", "ActIcon", "ItemIcon", "MercyIcon")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 160.0
+offset_top = 165.0
+offset_right = 200.0
+offset_bottom = 205.0
+script = ExtResource("2_b54hw")
+FightIcon = NodePath("FightIcon")
+ActIcon = NodePath("SpecialIcon")
+ItemIcon = NodePath("ItemIcon")
+MercyIcon = NodePath("RunIcon")
+FightNormal = ExtResource("3_w88gu")
+FightSelected = ExtResource("4_gwm06")
+ActNormal = ExtResource("5_6euan")
+ActSelected = ExtResource("6_u5at7")
+ItemNormal = ExtResource("7_tibx4")
+ItemSelected = ExtResource("8_byq8r")
+MercyNormal = ExtResource("9_suigo")
+MercySelected = ExtResource("10_xhe3a")
+
+[node name="Sprite2D" type="Sprite2D" parent="BattleUI/BattleMenu" unique_id=1760720287]
+scale = Vector2(5, 1.931)
+texture = ExtResource("11_wgp5g")
+
+[node name="FightIcon" type="TextureRect" parent="BattleUI/BattleMenu" unique_id=2111935833]
+layout_mode = 0
+offset_left = -146.0
+offset_top = -62.0
+offset_right = -82.0
+offset_bottom = 2.0
+scale = Vector2(1, 1.938)
+texture = ExtResource("3_w88gu")
+
+[node name="SpecialIcon" type="TextureRect" parent="BattleUI/BattleMenu" unique_id=776752069]
+layout_mode = 0
+offset_left = -61.0
+offset_top = -62.0
+offset_right = 3.0
+offset_bottom = 2.0
+scale = Vector2(1, 1.938)
+texture = ExtResource("5_6euan")
+
+[node name="ItemIcon" type="TextureRect" parent="BattleUI/BattleMenu" unique_id=218829257]
+layout_mode = 0
+offset_left = 20.999998
+offset_top = -61.999996
+offset_right = 85.0
+offset_bottom = 2.0000038
+scale = Vector2(1, 1.938)
+texture = ExtResource("7_tibx4")
+
+[node name="RunIcon" type="TextureRect" parent="BattleUI/BattleMenu" unique_id=566495872]
+layout_mode = 0
+offset_left = 88.99999
+offset_top = -61.999996
+offset_right = 153.0
+offset_bottom = 2.0000038
+scale = Vector2(1, 1.938)
+texture = ExtResource("9_suigo")
+
+[node name="HealthUI" type="Control" parent="BattleUI" unique_id=1152283543 node_paths=PackedStringArray("healthText")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 110.0
+offset_top = 157.0
+offset_right = 150.0
+offset_bottom = 197.0
+script = ExtResource("12_wfqjn")
+healthText = NodePath("HealthPoints")
+
+[node name="BackBar" type="TextureProgressBar" parent="BattleUI/HealthUI" unique_id=1941917246]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 20.0
+value = 20.0
+texture_under = ExtResource("13_pgtvp")
+texture_over = ExtResource("14_v6006")
+texture_progress = ExtResource("15_luesj")
+
+[node name="FrontBar" type="TextureProgressBar" parent="BattleUI/HealthUI" unique_id=438262249]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 20.0
+value = 20.0
+texture_under = ExtResource("13_pgtvp")
+texture_over = ExtResource("14_v6006")
+texture_progress = ExtResource("15_luesj")
+
+[node name="HealthPoints" type="RichTextLabel" parent="BattleUI/HealthUI" unique_id=503979326]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 75.0
+offset_bottom = 21.0
+theme_override_font_sizes/normal_font_size = 8
+text = "20/20"
+horizontal_alignment = 1
+
+[node name="BattleController" type="Node2D" parent="." unique_id=851175532 node_paths=PackedStringArray("battleBox")]
+script = ExtResource("16_m2e5g")
+battleBox = NodePath("../BattleBox")
+
+[node name="EnemyManager" type="Node2D" parent="." unique_id=952569269]
+script = ExtResource("17_llcrh")
+
+[node name="EnemyDisplay" type="Area2D" parent="EnemyManager" unique_id=569714704 node_paths=PackedStringArray("HealthBar", "EnemySprite") groups=["Enemy"]]
+position = Vector2(160, 43)
+script = ExtResource("18_13d5a")
+EnemyName = "Whiz"
+HealthBar = NodePath("HealthBar")
+EnemySprite = NodePath("Greed")
+lastStand = true
+
+[node name="Greed" type="AnimatedSprite2D" parent="EnemyManager/EnemyDisplay" unique_id=724128917]
+sprite_frames = SubResource("SpriteFrames_763g1")
+
+[node name="HealthBar" type="ProgressBar" parent="EnemyManager/EnemyDisplay" unique_id=2119460338]
+z_index = 1
+offset_left = -64.0
+offset_top = 15.0
+offset_right = 66.0
+offset_bottom = 26.0
+theme_override_styles/background = SubResource("StyleBoxFlat_slw5m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y5dl4")
+show_percentage = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyManager/EnemyDisplay" unique_id=1704724517]
+shape = SubResource("RectangleShape2D_f8yuy")
+
+[node name="AttackManager" type="Node2D" parent="." unique_id=278481103 node_paths=PackedStringArray("mainEnemy")]
+z_index = 3
+script = ExtResource("20_byktf")
+mainEnemy = NodePath("../EnemyManager/EnemyDisplay")
+attacks1 = Array[PackedScene]([ExtResource("21_kw6pl"), ExtResource("22_arjvi"), ExtResource("22_arjvi")])
+attacks2 = Array[PackedScene]([ExtResource("23_aslon"), ExtResource("24_7twe8")])
+finalAttack = Array[PackedScene]([ExtResource("25_l23q8")])
+testAttacks = Array[PackedScene]([ExtResource("26_1sgst")])
+
+[node name="RhythmManager" type="Node2D" parent="." unique_id=952253573 node_paths=PackedStringArray("Lanes", "MusicPlayer", "Judgement")]
+z_index = 3
+script = ExtResource("27_vde6v")
+Lanes = [NodePath("Lane0"), NodePath("Lane1"), NodePath("Lane2"), NodePath("Lane3")]
+MusicPlayer = NodePath("../MusicPlayer")
+Judgement = NodePath("JudgementDisplay")
+BPM = 110.0
+SequenceDuration = 6.0
+
+[node name="LaneSpawn0" type="Node2D" parent="RhythmManager" unique_id=1011649954]
+position = Vector2(113.75, -3)
+
+[node name="LaneSpawn1" type="Node2D" parent="RhythmManager" unique_id=1820814431]
+position = Vector2(144.75, -3)
+
+[node name="LaneSpawn2" type="Node2D" parent="RhythmManager" unique_id=1705458842]
+position = Vector2(175.75, -3)
+
+[node name="LaneSpawn3" type="Node2D" parent="RhythmManager" unique_id=916202978]
+position = Vector2(206.75, -3)
+
+[node name="Lane0" type="Sprite2D" parent="RhythmManager" unique_id=2140497298 node_paths=PackedStringArray("SpawnPoint", "HitZone", "EarlyZone", "GoodZone", "PerfectZone", "LateZone", "ReleaseEarlyZone", "ReleaseGoodZone", "ReleasePerfectZone", "ReleaseLateZone", "CleanupZone")]
+position = Vector2(113.75, 60)
+texture = ExtResource("28_yctah")
+script = ExtResource("29_cw0lr")
+SpawnPoint = NodePath("../LaneSpawn0")
+HitZone = NodePath("HitZone0")
+EarlyZone = NodePath("EarlyZone")
+GoodZone = NodePath("GoodZone")
+PerfectZone = NodePath("PerfectZone")
+LateZone = NodePath("LateZone")
+ReleaseEarlyZone = NodePath("EarlyZone")
+ReleaseGoodZone = NodePath("GoodZone")
+ReleasePerfectZone = NodePath("PerfectZone")
+ReleaseLateZone = NodePath("LateZone")
+CleanupZone = NodePath("CleanupZone")
+NoteScene = ExtResource("30_22o38")
+HoldNoteScene = ExtResource("31_2gqwg")
+NoteSpeed = 100.0
+
+[node name="HitZone0" type="Node2D" parent="RhythmManager/Lane0" unique_id=832258690]
+position = Vector2(0, 26.047)
+script = ExtResource("32_gnht8")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RhythmManager/Lane0/HitZone0" unique_id=1735735559]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_ky1ns")
+offset = Vector2(0, -16)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="RhythmManager/Lane0/HitZone0" unique_id=382739383]
+z_index = 1
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_85lru")
+script = ExtResource("38_0wdup")
+
+[node name="CleanupZone" type="Area2D" parent="RhythmManager/Lane0" unique_id=1178303256]
+position = Vector2(0, 27)
+script = ExtResource("39_mjgeo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane0/CleanupZone" unique_id=3564272]
+position = Vector2(0.25, 37)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="LateZone" type="Area2D" parent="RhythmManager/Lane0" unique_id=1998745391]
+position = Vector2(0, 26)
+script = ExtResource("39_mjgeo")
+ZoneType = "late"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane0/LateZone" unique_id=892223447]
+position = Vector2(0.25, 33)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="EarlyZone" type="Area2D" parent="RhythmManager/Lane0" unique_id=1698975904]
+position = Vector2(0, 23)
+script = ExtResource("39_mjgeo")
+ZoneType = "early"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane0/EarlyZone" unique_id=267979601]
+position = Vector2(0.25, 5.337181)
+shape = SubResource("RectangleShape2D_brqcw")
+
+[node name="GoodZone" type="Area2D" parent="RhythmManager/Lane0" unique_id=1668301883]
+position = Vector2(0, 24)
+script = ExtResource("39_mjgeo")
+ZoneType = "good"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane0/GoodZone" unique_id=569183121]
+position = Vector2(0.25, 21)
+shape = SubResource("RectangleShape2D_yts5r")
+
+[node name="PerfectZone" type="Area2D" parent="RhythmManager/Lane0" unique_id=462202435]
+position = Vector2(0, 24)
+script = ExtResource("39_mjgeo")
+ZoneType = "perfect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane0/PerfectZone" unique_id=2077332679]
+position = Vector2(0.25, 27)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="Lane1" type="Sprite2D" parent="RhythmManager" unique_id=1332624493 node_paths=PackedStringArray("SpawnPoint", "HitZone", "EarlyZone", "GoodZone", "PerfectZone", "LateZone", "ReleaseEarlyZone", "ReleaseGoodZone", "ReleasePerfectZone", "ReleaseLateZone", "CleanupZone")]
+position = Vector2(144.75, 60)
+texture = ExtResource("28_yctah")
+script = ExtResource("29_cw0lr")
+LaneIndex = 1
+SpawnPoint = NodePath("../LaneSpawn1")
+HitZone = NodePath("HitZone1")
+EarlyZone = NodePath("EarlyZone")
+GoodZone = NodePath("GoodZone")
+PerfectZone = NodePath("PerfectZone")
+LateZone = NodePath("LateZone")
+ReleaseEarlyZone = NodePath("EarlyZone")
+ReleaseGoodZone = NodePath("GoodZone")
+ReleasePerfectZone = NodePath("PerfectZone")
+ReleaseLateZone = NodePath("LateZone")
+CleanupZone = NodePath("CleanupZone")
+NoteScene = ExtResource("40_mldds")
+HoldNoteScene = ExtResource("41_5ax7q")
+NoteSpeed = 100.0
+
+[node name="HitZone1" type="Node2D" parent="RhythmManager/Lane1" unique_id=2145152213]
+position = Vector2(0, 26.042)
+script = ExtResource("32_gnht8")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RhythmManager/Lane1/HitZone1" unique_id=960196029]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_xm5o2")
+offset = Vector2(0, -16)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="RhythmManager/Lane1/HitZone1" unique_id=1678646250]
+z_index = 1
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_k6f0a")
+script = ExtResource("38_0wdup")
+lane = 1
+
+[node name="EarlyZone" type="Area2D" parent="RhythmManager/Lane1" unique_id=2101917361]
+position = Vector2(0, 23)
+script = ExtResource("39_mjgeo")
+ZoneType = "early"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane1/EarlyZone" unique_id=2104524232]
+position = Vector2(0.25, 6)
+shape = SubResource("RectangleShape2D_brqcw")
+
+[node name="CleanupZone" type="Area2D" parent="RhythmManager/Lane1" unique_id=502494870]
+position = Vector2(0, 27)
+script = ExtResource("39_mjgeo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane1/CleanupZone" unique_id=1400958141]
+position = Vector2(0.25, 37)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="LateZone" type="Area2D" parent="RhythmManager/Lane1" unique_id=1273766308]
+position = Vector2(0, 26)
+script = ExtResource("39_mjgeo")
+ZoneType = "late"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane1/LateZone" unique_id=1406028440]
+position = Vector2(0.25, 33)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="GoodZone" type="Area2D" parent="RhythmManager/Lane1" unique_id=11018435]
+position = Vector2(0, 24)
+script = ExtResource("39_mjgeo")
+ZoneType = "good"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane1/GoodZone" unique_id=943317036]
+position = Vector2(0.25, 21)
+shape = SubResource("RectangleShape2D_yts5r")
+
+[node name="PerfectZone" type="Area2D" parent="RhythmManager/Lane1" unique_id=553275701]
+position = Vector2(0, 24)
+script = ExtResource("39_mjgeo")
+ZoneType = "perfect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane1/PerfectZone" unique_id=1655676378]
+position = Vector2(0.25, 27)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="Lane2" type="Sprite2D" parent="RhythmManager" unique_id=864970460 node_paths=PackedStringArray("SpawnPoint", "HitZone", "EarlyZone", "GoodZone", "PerfectZone", "LateZone", "ReleaseEarlyZone", "ReleaseGoodZone", "ReleasePerfectZone", "ReleaseLateZone", "CleanupZone")]
+position = Vector2(175.75, 60)
+texture = ExtResource("28_yctah")
+script = ExtResource("29_cw0lr")
+LaneIndex = 2
+SpawnPoint = NodePath("../LaneSpawn2")
+HitZone = NodePath("HitZone2")
+EarlyZone = NodePath("EarlyZone")
+GoodZone = NodePath("GoodZone")
+PerfectZone = NodePath("PerfectZone")
+LateZone = NodePath("LateZone")
+ReleaseEarlyZone = NodePath("EarlyZone")
+ReleaseGoodZone = NodePath("GoodZone")
+ReleasePerfectZone = NodePath("PerfectZone")
+ReleaseLateZone = NodePath("LateZone")
+CleanupZone = NodePath("CleanupZone")
+NoteScene = ExtResource("40_mldds")
+HoldNoteScene = ExtResource("41_5ax7q")
+NoteSpeed = 100.0
+
+[node name="HitZone2" type="Node2D" parent="RhythmManager/Lane2" unique_id=890419698]
+position = Vector2(0, 26.042)
+script = ExtResource("32_gnht8")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RhythmManager/Lane2/HitZone2" unique_id=1795443666]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_aq6un")
+offset = Vector2(0, -16)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="RhythmManager/Lane2/HitZone2" unique_id=960702011]
+z_index = 1
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_ci1qd")
+script = ExtResource("38_0wdup")
+lane = 2
+
+[node name="EarlyZone" type="Area2D" parent="RhythmManager/Lane2" unique_id=1504916761]
+position = Vector2(0, 23)
+script = ExtResource("39_mjgeo")
+ZoneType = "early"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane2/EarlyZone" unique_id=1562761891]
+position = Vector2(0.25, 6)
+shape = SubResource("RectangleShape2D_brqcw")
+
+[node name="CleanupZone" type="Area2D" parent="RhythmManager/Lane2" unique_id=673015250]
+position = Vector2(0, 27)
+script = ExtResource("39_mjgeo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane2/CleanupZone" unique_id=812908035]
+position = Vector2(0.25, 37)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="LateZone" type="Area2D" parent="RhythmManager/Lane2" unique_id=208960439]
+position = Vector2(0, 26)
+script = ExtResource("39_mjgeo")
+ZoneType = "late"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane2/LateZone" unique_id=1585957554]
+position = Vector2(0.25, 33)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="GoodZone" type="Area2D" parent="RhythmManager/Lane2" unique_id=548264910]
+position = Vector2(0, 24)
+script = ExtResource("39_mjgeo")
+ZoneType = "good"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane2/GoodZone" unique_id=1300800379]
+position = Vector2(0.25, 21)
+shape = SubResource("RectangleShape2D_yts5r")
+
+[node name="PerfectZone" type="Area2D" parent="RhythmManager/Lane2" unique_id=311535555]
+position = Vector2(0, 24)
+script = ExtResource("39_mjgeo")
+ZoneType = "perfect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane2/PerfectZone" unique_id=2060702709]
+position = Vector2(0.25, 27)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="Lane3" type="Sprite2D" parent="RhythmManager" unique_id=1130510674 node_paths=PackedStringArray("SpawnPoint", "HitZone", "EarlyZone", "GoodZone", "PerfectZone", "LateZone", "ReleaseEarlyZone", "ReleaseGoodZone", "ReleasePerfectZone", "ReleaseLateZone", "CleanupZone")]
+position = Vector2(206.75, 60)
+texture = ExtResource("28_yctah")
+script = ExtResource("29_cw0lr")
+LaneIndex = 3
+SpawnPoint = NodePath("../LaneSpawn3")
+HitZone = NodePath("HitZone3")
+EarlyZone = NodePath("EarlyZone")
+GoodZone = NodePath("GoodZone")
+PerfectZone = NodePath("PerfectZone")
+LateZone = NodePath("LateZone")
+ReleaseEarlyZone = NodePath("EarlyZone")
+ReleaseGoodZone = NodePath("GoodZone")
+ReleasePerfectZone = NodePath("PerfectZone")
+ReleaseLateZone = NodePath("LateZone")
+CleanupZone = NodePath("CleanupZone")
+NoteScene = ExtResource("30_22o38")
+HoldNoteScene = ExtResource("31_2gqwg")
+NoteSpeed = 100.0
+
+[node name="HitZone3" type="Node2D" parent="RhythmManager/Lane3" unique_id=1798901546]
+position = Vector2(0, 26.042)
+script = ExtResource("32_gnht8")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RhythmManager/Lane3/HitZone3" unique_id=1075221722]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_ky1ns")
+offset = Vector2(0, -16)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="RhythmManager/Lane3/HitZone3" unique_id=567925605]
+z_index = 1
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_8p3jf")
+script = ExtResource("38_0wdup")
+lane = 3
+
+[node name="EarlyZone" type="Area2D" parent="RhythmManager/Lane3" unique_id=633840783]
+position = Vector2(0, 23)
+script = ExtResource("39_mjgeo")
+ZoneType = "early"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane3/EarlyZone" unique_id=1375820273]
+position = Vector2(0.25, 6)
+shape = SubResource("RectangleShape2D_brqcw")
+
+[node name="CleanupZone" type="Area2D" parent="RhythmManager/Lane3" unique_id=2017854420]
+position = Vector2(0, 27)
+script = ExtResource("39_mjgeo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane3/CleanupZone" unique_id=2040448687]
+position = Vector2(0.25, 37)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="LateZone" type="Area2D" parent="RhythmManager/Lane3" unique_id=858569993]
+position = Vector2(0, 26)
+script = ExtResource("39_mjgeo")
+ZoneType = "late"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane3/LateZone" unique_id=1202595818]
+position = Vector2(0.25, 33)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="GoodZone" type="Area2D" parent="RhythmManager/Lane3" unique_id=2002703471]
+position = Vector2(0, 24)
+script = ExtResource("39_mjgeo")
+ZoneType = "good"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane3/GoodZone" unique_id=290786318]
+position = Vector2(0.25, 21)
+shape = SubResource("RectangleShape2D_yts5r")
+
+[node name="PerfectZone" type="Area2D" parent="RhythmManager/Lane3" unique_id=503754984]
+position = Vector2(0, 24)
+script = ExtResource("39_mjgeo")
+ZoneType = "perfect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmManager/Lane3/PerfectZone" unique_id=723918659]
+position = Vector2(0.25, 27)
+shape = SubResource("RectangleShape2D_gvtps")
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmManager" unique_id=713334923]
+modulate = Color(1, 1, 1, 0.5294118)
+z_index = -1
+position = Vector2(320, 180)
+scale = Vector2(320, 180)
+texture = ExtResource("46_1pqbt")
+
+[node name="NoteLayerMask" type="Sprite2D" parent="RhythmManager" unique_id=1725819283]
+position = Vector2(160.49998, 156)
+scale = Vector2(320.99997, 51.999992)
+texture = ExtResource("46_1pqbt")
+region_enabled = true
+region_rect = Rect2(15, 15, 1, 1)
+
+[node name="JudgementDisplay" type="Node2D" parent="RhythmManager" unique_id=1870522567]
+position = Vector2(160, 65)
+script = ExtResource("47_bd6wx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RhythmManager/JudgementDisplay" unique_id=214491364]
+sprite_frames = SubResource("SpriteFrames_c131y")
+
+[node name="BattleBox" type="Node2D" parent="." unique_id=21474286 node_paths=PackedStringArray("top", "bottom", "left", "right", "topLeft", "topRight", "bottomLeft", "bottomRight", "collisionShape", "blackBackground", "cleanupTop", "cleanupBottom", "cleanupLeft", "cleanupRight")]
+z_index = 3
+position = Vector2(160, 119)
+script = ExtResource("51_f77kw")
+top = NodePath("Top")
+bottom = NodePath("Bottom")
+left = NodePath("Left")
+right = NodePath("Right")
+topLeft = NodePath("TopLeft")
+topRight = NodePath("TopRight")
+bottomLeft = NodePath("BottomLeft")
+bottomRight = NodePath("BottomRight")
+collisionShape = NodePath("ArenaArea/CollisionShape2D")
+targetSize = Vector2(50, 50)
+dialogueSize = Vector2(300, 54)
+attackSize = Vector2(125, 26)
+enemySize = Vector2(50, 50)
+widerEnemySize = Vector2(80, 60)
+widestEnemySize = Vector2(96, 96)
+tallEnemySize = Vector2(50, 100)
+dialoguePosition = Vector2(160, 118)
+attackPosition = Vector2(160, 116)
+enemyPosition = Vector2(160, 119)
+widerEnemyPosition = Vector2(160, 114)
+widestEnemyPosition = Vector2(160, 90)
+tallEnemyPosition = Vector2(160, 90)
+blackBackground = NodePath("BlackBackground")
+cleanupTop = NodePath("CleanupTop")
+cleanupBottom = NodePath("CleanupBottom")
+cleanupLeft = NodePath("CleanupLeft")
+cleanupRight = NodePath("CleanupRight")
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="BattleBox" unique_id=1258245777]
+texture_repeat = 2
+texture = ExtResource("52_vmvcx")
+region_enabled = true
+region_rect = Rect2(15, 15, 1, 1)
+
+[node name="Bottom" type="Sprite2D" parent="BattleBox" unique_id=415942391]
+texture_repeat = 2
+texture = ExtResource("52_vmvcx")
+region_enabled = true
+region_rect = Rect2(15, 15, 1, 1)
+
+[node name="Left" type="Sprite2D" parent="BattleBox" unique_id=2034319406]
+texture_repeat = 2
+texture = ExtResource("52_vmvcx")
+region_enabled = true
+region_rect = Rect2(15, 15, 1, 1)
+
+[node name="Right" type="Sprite2D" parent="BattleBox" unique_id=601887757]
+texture_repeat = 2
+texture = ExtResource("52_vmvcx")
+region_enabled = true
+region_rect = Rect2(15, 15, 1, 1)
+
+[node name="TopLeft" type="Sprite2D" parent="BattleBox" unique_id=938677234]
+texture = ExtResource("52_vmvcx")
+region_enabled = true
+region_rect = Rect2(15, 15, 1, 1)
+
+[node name="TopRight" type="Sprite2D" parent="BattleBox" unique_id=494596638]
+texture = ExtResource("52_vmvcx")
+region_enabled = true
+region_rect = Rect2(15, 15, 1, 1)
+
+[node name="BottomLeft" type="Sprite2D" parent="BattleBox" unique_id=1637131297]
+texture = ExtResource("52_vmvcx")
+region_enabled = true
+region_rect = Rect2(15, 15, 1, 1)
+
+[node name="BottomRight" type="Sprite2D" parent="BattleBox" unique_id=1297683970]
+texture = ExtResource("52_vmvcx")
+region_enabled = true
+region_rect = Rect2(15, 15, 1, 1)
+
+[node name="ArenaArea" type="Area2D" parent="BattleBox" unique_id=1833505947]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleBox/ArenaArea" unique_id=1074476809]
+shape = SubResource("RectangleShape2D_ky1ns")
+
+[node name="BlackBackground" type="Sprite2D" parent="BattleBox" unique_id=842638566]
+z_index = -3
+texture = ExtResource("46_1pqbt")
+
+[node name="CleanupTop" type="Area2D" parent="BattleBox" unique_id=1870944625 groups=["BulletBreaker"]]
+position = Vector2(-160, -119)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleBox/CleanupTop" unique_id=415667718]
+shape = SubResource("RectangleShape2D_fnjwk")
+
+[node name="CleanupBottom" type="Area2D" parent="BattleBox" unique_id=1982099305 groups=["BulletBreaker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleBox/CleanupBottom" unique_id=928719267]
+shape = SubResource("RectangleShape2D_npgqm")
+
+[node name="CleanupLeft" type="Area2D" parent="BattleBox" unique_id=1391537188 groups=["BulletBreaker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleBox/CleanupLeft" unique_id=31591414]
+shape = SubResource("RectangleShape2D_l1a0y")
+
+[node name="CleanupRight" type="Area2D" parent="BattleBox" unique_id=1528696722 groups=["BulletBreaker"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleBox/CleanupRight" unique_id=1610689058]
+shape = SubResource("RectangleShape2D_xm5o2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=472415416]
+position = Vector2(160, 90)
+script = ExtResource("53_jkf82")
+
+[node name="PlayerSoul" type="Area2D" parent="." unique_id=572367981 node_paths=PackedStringArray("battleBox") groups=["Player"]]
+z_index = 1
+script = ExtResource("54_wbkop")
+battleBox = NodePath("../BattleBox")
+bulletScenes = [ExtResource("55_nn1pt"), ExtResource("56_7xd8w"), ExtResource("57_txusw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSoul" unique_id=1338220161]
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_8pe8s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerSoul" unique_id=1538611665]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_ve76d")
+offset = Vector2(0.5, 0.5)
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1152970584]
+stream = ExtResource("61_rx6j3")
+autoplay = true
+parameters/looping = true

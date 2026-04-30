@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://fkavsuen1vb8"]
+
+[ext_resource type="Script" uid="uid://csxwgbcf4l104" path="res://Scripts/FarmerAttacks/CowBullet.cs" id="1_qyixi"]
+[ext_resource type="Texture2D" uid="uid://bsyev25x3wesm" path="res://Sprites/miniAnimal.png" id="2_23mdh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_motn2"]
+atlas = ExtResource("2_23mdh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3ya5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_motn2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgxlc"]
+size = Vector2(9, 5)
+
+[node name="CowBullet" type="Area2D" unique_id=726313509 groups=["CowBullet"]]
+script = ExtResource("1_qyixi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=105221847]
+sprite_frames = SubResource("SpriteFrames_t3ya5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1666006059]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_sgxlc")

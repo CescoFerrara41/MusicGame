@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d1tm7nbmd60na"]
+
+[ext_resource type="Script" uid="uid://v0iogntujbcg" path="res://Scripts/FarmerAttacks/DestroyableEgg.cs" id="1_48ojj"]
+[ext_resource type="PackedScene" uid="uid://m02aaxpo8gpa" path="res://Prefabs/FarmerAttacks/egg_basic_laser.tscn" id="2_64ovu"]
+[ext_resource type="Texture2D" uid="uid://c45qm0qlc375g" path="res://Sprites/EggProjectile.png" id="2_ink7h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pheh3"]
+atlas = ExtResource("2_ink7h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dp27x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pheh3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7h4hs"]
+
+[node name="DestroyableEgg" type="Area2D" unique_id=1521701820]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_48ojj")
+speed = 35.0
+eggLaserScene = ExtResource("2_64ovu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=12292114]
+sprite_frames = SubResource("SpriteFrames_dp27x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=812697630]
+shape = SubResource("CapsuleShape2D_7h4hs")

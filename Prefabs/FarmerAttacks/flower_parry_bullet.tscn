@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c7um1ajy8k4yh"]
+
+[ext_resource type="Script" uid="uid://t2uikyykwnl2" path="res://Scripts/FarmerAttacks/FlowerParryBullet.cs" id="1_ll0gh"]
+[ext_resource type="Texture2D" uid="uid://boij52dts7ko4" path="res://Sprites/FlowerParryBullet.png" id="2_8dbc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yom63"]
+size = Vector2(12, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ta3"]
+size = Vector2(18, 20)
+
+[node name="FlowerParryBullet" type="Area2D" unique_id=1329222060]
+script = ExtResource("1_ll0gh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1760922370]
+texture = ExtResource("2_8dbc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1731448306]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_yom63")
+
+[node name="ParryArea" type="Area2D" parent="." unique_id=2068235415]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParryArea" unique_id=1427845023]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_s7ta3")

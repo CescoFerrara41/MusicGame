@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bxvhnfkmde1l0"]
+
+[ext_resource type="Script" uid="uid://cpuiibnfp6fce" path="res://Scripts/WizardAttacks/RapidPortalAttack.cs" id="1_b5qqp"]
+[ext_resource type="PackedScene" uid="uid://1cb52mjarquy" path="res://Prefabs/WizardAttacks/portal.tscn" id="2_0a0p2"]
+[ext_resource type="PackedScene" uid="uid://bnmlbg7qh083k" path="res://Prefabs/WizardAttacks/bullet_car.tscn" id="3_wbdd7"]
+[ext_resource type="PackedScene" uid="uid://dr6mrbedahqy7" path="res://Prefabs/WizardAttacks/parry_bullet_car.tscn" id="4_wbdd7"]
+
+[node name="RapidPortalAttack" type="Node2D" unique_id=1336582604]
+script = ExtResource("1_b5qqp")
+portalScene = ExtResource("2_0a0p2")
+bulletScene = ExtResource("3_wbdd7")
+parryBulletScene = ExtResource("4_wbdd7")

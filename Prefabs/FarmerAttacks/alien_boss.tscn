@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dc465gql6p2d7"]
+
+[ext_resource type="Script" uid="uid://dwqh16d6ftea" path="res://Scripts/FarmerAttacks/AlienBoss.cs" id="1_sa3rx"]
+[ext_resource type="Texture2D" uid="uid://dgc1bjb28rdgk" path="res://Sprites/miniUFO.png" id="2_fnq5m"]
+[ext_resource type="PackedScene" uid="uid://cpbvb0qnox841" path="res://Prefabs/FarmerAttacks/egg_projectile_breakable.tscn" id="2_y0i5j"]
+[ext_resource type="PackedScene" uid="uid://ykbqybhh8l1w" path="res://Prefabs/FarmerAttacks/parry_egg_breakable.tscn" id="3_y0i5j"]
+[ext_resource type="PackedScene" uid="uid://dpdxhngijwcc2" path="res://Prefabs/FarmerAttacks/ufo_cow_pull.tscn" id="4_qi4o5"]
+[ext_resource type="PackedScene" uid="uid://c4kljxvreduos" path="res://Prefabs/FarmerAttacks/laser_egg_breakable.tscn" id="5_3y7bv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3rvt"]
+atlas = ExtResource("2_fnq5m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0i5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3rvt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y7bv"]
+size = Vector2(21, 20)
+
+[node name="AlienBoss" type="Area2D" unique_id=591501184 node_paths=PackedStringArray("alienSprite")]
+script = ExtResource("1_sa3rx")
+alienSprite = NodePath("AnimatedSprite2D")
+eggProjectileScene = ExtResource("2_y0i5j")
+parryEggScene = ExtResource("3_y0i5j")
+ufoCowPullScene = ExtResource("4_qi4o5")
+laserEggScene = ExtResource("5_3y7bv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=426004240]
+sprite_frames = SubResource("SpriteFrames_y0i5j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915083253]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_3y7bv")
