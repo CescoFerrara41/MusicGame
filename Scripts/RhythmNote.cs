@@ -73,6 +73,7 @@ public partial class RhythmNote : Node2D
 		if (area == laneController.GoodZone)    InGood    = true;
 		if (area == laneController.EarlyZone)   InEarly   = true;
 		if (area == laneController.LateZone)    InLate    = true;
+		if (area == laneController.GoodZoneLate) InGood   = true;
 	}
 
 	private void OnAreaExited(Area2D area)
@@ -81,5 +82,6 @@ public partial class RhythmNote : Node2D
 		if (area == laneController.GoodZone)    InGood    = false;
 		if (area == laneController.EarlyZone)   InEarly   = false;
 		if (area == laneController.LateZone)    InLate    = false;
+		if (area == laneController.GoodZoneLate) InGood   = false;
 	}
 }

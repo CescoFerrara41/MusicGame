@@ -12,10 +12,12 @@ public partial class LaneController : Node2D
 	[Export] public Area2D GoodZone;
 	[Export] public Area2D PerfectZone;
 	[Export] public Area2D LateZone;
+	[Export] public Area2D GoodZoneLate;
 
 	// Release zones — tail (TopCap) is judged against these
 	[Export] public Area2D ReleaseEarlyZone;
 	[Export] public Area2D ReleaseGoodZone;
+	[Export] public Area2D ReleaseGoodZoneLate;
 	[Export] public Area2D ReleasePerfectZone;
 	[Export] public Area2D ReleaseLateZone;
 
@@ -91,11 +93,7 @@ public partial class LaneController : Node2D
 
 		// Tap notes
 		RhythmNote note = GetPriorityNote();
-		if (note == null)
-		{
-			manager.RegisterMiss();
-			return;
-		}
+		if (note == null) return;
 
 		if (note.InPerfect)
 		{

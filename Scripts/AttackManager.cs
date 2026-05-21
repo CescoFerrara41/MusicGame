@@ -41,7 +41,7 @@ public partial class AttackManager : Node
 		GD.Print("Enemy attack started");
 		
 		// comment this out when not testing
-		currentAttack = testAttacks[0].Instantiate<AttackPattern>();
+		//currentAttack = testAttacks[0].Instantiate<AttackPattern>();
 
 		RunAttack();
 	}
@@ -53,8 +53,15 @@ public partial class AttackManager : Node
 }
 
 	public AttackPattern GetRandomAttack2() {
-		int index = GD.RandRange(0, attacks2.Length-1);
-		return attacks2[index].Instantiate<AttackPattern>();
+		int randomNum = GD.RandRange(0, 1);
+		if (randomNum == 0) {
+			int index = GD.RandRange(0, attacks1.Length - 1);
+			return attacks1[index].Instantiate<AttackPattern>();
+		}
+		else {
+			int index = GD.RandRange(0, attacks2.Length-1);
+			return attacks2[index].Instantiate<AttackPattern>();
+		}
 	}
 	
 	public AttackPattern GetFinalAttack() {

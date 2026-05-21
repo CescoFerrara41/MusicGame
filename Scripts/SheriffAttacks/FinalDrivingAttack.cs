@@ -12,7 +12,7 @@ using System.Collections.Generic;
 /// </summary>
 public partial class FinalDrivingAttack : AttackPattern
 {
-	[Export] private float attackDuration = 10f;
+	[Export] private float attackDuration = 16f;
 	[Export] private float playerBottomOffset = 15f;
 	[Export] private float snapDuration = 0.08f;
 
@@ -55,7 +55,7 @@ public partial class FinalDrivingAttack : AttackPattern
 
 		SetupLanes();
 
-		currentLane = 1;
+		currentLane = 2;
 		player.GlobalPosition = new Vector2(laneXPositions[currentLane], lockedY);
 
 		player.SetProcess(false);
@@ -183,14 +183,68 @@ public partial class FinalDrivingAttack : AttackPattern
 	// -------------------------------------------------------------------------
 	private void HandleTimeline()
 	{
-		SpawnAt(id: 0,  time: 2f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 0 });
-		SpawnAt(id: 1,  time: 2.3f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 1 });
-		SpawnAt(id: 2,  time: 2.6f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
-		SpawnAt(id: 3,  time: 2.9f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 3 });
-		SpawnAt(id: 4,  time: 3.3f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 4 });
-		SpawnAt(id: 5,  time: 3.6f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 3 });
-		SpawnAt(id: 6,  time: 3.9f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
-		SpawnAt(id: 7,  time: 4.2f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 1 });
+		SpawnAt(id: -3,  time: 1.64f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 4 });
+		SpawnAt(id: -2,  time: 1.76f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 3 });
+		SpawnAt(id: -1,  time: 1.88f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
+		SpawnAt(id: 0,  time: 2.0f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 1 });
+		SpawnAt(id: 1,  time: 2.12f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
+		SpawnAt(id: 2,  time: 2.24f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 3 });
+		SpawnAt(id: 3,  time: 2.36f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 4 });
+		SpawnAt(id: 4,  time: 2.24f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 0 });
+		SpawnAt(id: 5,  time: 2.36f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 1 });
+		SpawnAt(id: 6,  time: 2.48f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
+		SpawnAt(id: 7,  time: 2.60f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 3 });
+		SpawnAt(id: 8,  time: 2.84f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 4 });
+		SpawnAt(id: 9,  time: 2.96f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 3 });
+		SpawnAt(id: 10,  time: 3.08f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
+		SpawnAt(id: 11,  time: 3.20f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 1 });
+		SpawnAt(id: 12,  time: 2.72f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
+		SpawnAt(id: 13,  time: 2.84f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 1 });
+		SpawnAt(id: 14,  time: 2.96f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 0 });
+		SpawnAt(id: 15,  time: 3.20f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 1 });
+		SpawnAt(id: 16,  time: 3.44f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 0 });
+		SpawnAt(id: 17,  time: 3.56f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 1 });
+		SpawnAt(id: 18,  time: 3.68f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
+		SpawnAt(id: 19,  time: 3.80f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 3 });
+		SpawnAt(id: 20,  time: 3.32f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
+		SpawnAt(id: 21,  time: 3.44f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 3 });
+		SpawnAt(id: 22,  time: 3.56f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 4 });
+		SpawnAt(id: 23,  time: 4.16f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 3 });
+		SpawnAt(id: 24,  time: 4.04f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 4 });
+		SpawnAt(id: 25,  time: 4.5f,    speed: scrollSpeed-30f,                        scene: carScene, lanes: new[] { 2 });
+		SpawnAt(id: 26,  time: 4.6f,    speed: scrollSpeed-20f,                        scene: carScene, lanes: new[] { 1 });
+		SpawnAt(id: 27,  time: 4.7f,    speed: scrollSpeed-40f,                        scene: carScene, lanes: new[] { 0 });
+		SpawnAt(id: 28,  time: 5f,    speed: scrollSpeed-50f,                        scene: carScene, lanes: new[] { 3 });
+		SpawnAt(id: 29,  time: 5f,    speed: scrollSpeed-50f,                        scene: carScene, lanes: new[] { 4 });
+		SpawnAt(id: 30,  time: 6f,    speed: scrollSpeed+30f,                        scene: carScene, lanes: new[] { 0 });
+		SpawnAt(id: 33,  time: 6.1f,    speed: scrollSpeed+30f,                        scene: carScene, lanes: new[] { 1 });
+		SpawnAt(id: 31,  time: 6.3f,    speed: scrollSpeed+40f,                        scene: carScene, lanes: new[] { 2 });
+		SpawnAt(id: 32,  time: 6f,    speed: scrollSpeed+30f,                        scene: carScene, lanes: new[] { 4 });
+		SpawnAt(id: 34,  time: 6.5f,    speed: scrollSpeed+30f,                        scene: carScene, lanes: new[] { 0 });
+		SpawnAt(id: 35,  time: 6.6f,    speed: scrollSpeed+30f,                        scene: carScene, lanes: new[] { 3 });
+		SpawnAt(id: 36,  time: 6.8f,    speed: scrollSpeed+40f,                        scene: carScene, lanes: new[] { 2 });
+		SpawnAt(id: 37,  time: 6.5f,    speed: scrollSpeed+30f,                        scene: carScene, lanes: new[] { 4 });
+		SpawnAt(id: 38,  time: 7f,    speed: scrollSpeed+30f,                        scene: carScene, lanes: new[] { 0 });
+		SpawnAt(id: 39,  time: 7.1f,    speed: scrollSpeed+30f,                        scene: carScene, lanes: new[] { 1 });
+		SpawnAt(id: 40,  time: 7.3f,    speed: scrollSpeed+40f,                        scene: carScene, lanes: new[] { 2 });
+		SpawnAt(id: 41,  time: 7f,    speed: scrollSpeed+30f,                        scene: carScene, lanes: new[] { 4 });
+		SpawnSpinningCarAt(id: 42, time: 8f, speed: 100f, startLane: 0, endLane: 2, bounceWall: SpinningCarWall.Right);
+		SpawnSpinningCarAt(id: 43, time: 8.1f, speed: 100f, startLane: 3, endLane: 0, bounceWall: SpinningCarWall.Right);
+		SpawnSpinningCarAt(id: 44, time: 8.2f, speed: 100f, startLane: 1, endLane: 4, bounceWall: SpinningCarWall.Left);
+		SpawnSpinningCarAt(id: 45, time: 9f, speed: 100f, startLane: 0, endLane: 1, bounceWall: SpinningCarWall.Right);
+		SpawnSpinningCarAt(id: 46, time: 9.1f, speed: 100f, startLane: 1, endLane: 3, bounceWall: SpinningCarWall.Left);
+		SpawnSpinningCarAt(id: 47, time: 9.2f, speed: 90f, startLane: 3, endLane: 0, bounceWall: SpinningCarWall.Right);
+		SpawnSpinningCarAt(id: 48, time: 10f, speed: 120f, startLane: 1, endLane: 2, bounceWall: SpinningCarWall.Right);
+		SpawnSpinningCarAt(id: 49, time: 10.5f, speed: 120f, startLane: 4, endLane: 0, bounceWall: SpinningCarWall.Left);
+		SpawnSpinningCarAt(id: 50, time: 11f, speed: 120f, startLane: 3, endLane: 4, bounceWall: SpinningCarWall.Left);
+		SpawnSpinningCarAt(id: 51, time: 11.5f, speed: 120f, startLane: 4, endLane: 1, bounceWall: SpinningCarWall.Left);
+		SpawnSpinningCarAt(id: 52, time: 12f, speed: 120f, startLane: 0, endLane: 2, bounceWall: SpinningCarWall.Right);
+		SpawnSpinningCarAt(id: 53, time: 12f, speed: 120f, startLane: 1, endLane: 3, bounceWall: SpinningCarWall.Right);
+		SpawnSpinningCarAt(id: 54, time: 12.5f, speed: 120f, startLane: 4, endLane: 0, bounceWall: SpinningCarWall.Left);
+		SpawnSpinningCarAt(id: 55, time: 12.5f, speed: 120f, startLane: 3, endLane: 4, bounceWall: SpinningCarWall.Left);
+		SpawnSpinningCarAt(id: 56, time: 13f, speed: 120f, startLane: 3, endLane: 1, bounceWall: SpinningCarWall.Right);
+		SpawnSpinningCarAt(id: 57, time: 13f, speed: 120f, startLane: 2, endLane: 4, bounceWall: SpinningCarWall.Left);
+		//SpawnAt(id: 16,  time: 3.32f,    speed: scrollSpeed,                        scene: spikeTrapScene, lanes: new[] { 2 });
 
 		// Spinning car example:
 		SpawnSpinningCarAt(id: 20, time: 5f, speed: 100f, startLane: 0, endLane: 2, bounceWall: SpinningCarWall.Right);

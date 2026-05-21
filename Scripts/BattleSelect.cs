@@ -16,9 +16,9 @@ public partial class BattleSelect : Control
 	public override void _Ready()
 	{
 		battles.Add(new BattleData("WizardBattle", "res://Prefabs/Battles/WizardBattle.tscn"));
-		battles.Add(new BattleData("Battle 2", "res://Battles/Battle2.tscn"));
-		battles.Add(new BattleData("Battle 3", "res://Battles/Battle3.tscn"));
-		battles.Add(new BattleData("Battle 4", "res://Battles/Battle4.tscn"));
+		battles.Add(new BattleData("AlienBattle", "res://Prefabs/Battles/AlienBattle.tscn"));
+		battles.Add(new BattleData("SheriffBattle", "res://Prefabs/Battles/SheriffBattle.tscn"));
+		battles.Add(new BattleData("Casino Battle Coming Soon", "res://Battles/Battle4.tscn"));
 		battles.Add(new BattleData("Battle 5", "res://Battles/Battle5.tscn"));
 		battles.Add(new BattleData("Battle 6", "res://Battles/Battle6.tscn"));
 		battles.Add(new BattleData("Battle 7", "res://Battles/Battle7.tscn"));

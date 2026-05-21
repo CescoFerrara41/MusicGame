@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://cgspyhe8btc2t"]
 
 [ext_resource type="Script" uid="uid://djhe3b7o3dhgh" path="res://Scripts/SheriffAttacks/FinalDrivingAttack.cs" id="1_egg6j"]
+[ext_resource type="PackedScene" uid="uid://bko5q44csxe4b" path="res://Prefabs/SheriffAttacks/dash_line.tscn" id="2_8thny"]
+[ext_resource type="PackedScene" uid="uid://cjb4cb0ffcdfn" path="res://Prefabs/SheriffAttacks/spike_trap.tscn" id="3_nlucr"]
+[ext_resource type="PackedScene" uid="uid://bvp3qwioqi8ct" path="res://Prefabs/SheriffAttacks/enemy_car.tscn" id="4_lr54e"]
+[ext_resource type="PackedScene" uid="uid://bbdm4owxtp277" path="res://Prefabs/SheriffAttacks/spinning_car.tscn" id="5_uf7fj"]
 
 [node name="FinalDrivingAttack" type="Node2D" unique_id=1965317934]
 script = ExtResource("1_egg6j")
+dashLineScene = ExtResource("2_8thny")
+spikeTrapScene = ExtResource("3_nlucr")
+carScene = ExtResource("4_lr54e")
+spinningCarScene = ExtResource("5_uf7fj")

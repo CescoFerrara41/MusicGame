@@ -189,6 +189,7 @@ public partial class HoldNote : Node2D
 		if (area == lane.GoodZone)    headInGood    = true;
 		if (area == lane.EarlyZone)   headInEarly   = true;
 		if (area == lane.LateZone)    headInLate    = true;
+		if (area == lane.GoodZoneLate) headInGood = true;
 	}
 
 	private void OnHeadExited(Area2D area)
@@ -197,6 +198,7 @@ public partial class HoldNote : Node2D
 		if (area == lane.GoodZone)    headInGood    = false;
 		if (area == lane.EarlyZone)   headInEarly   = false;
 		if (area == lane.LateZone)    headInLate    = false;
+		if (area == lane.GoodZoneLate) headInGood = false;
 	}
 
 	// TAIL (TopCap) — release zones
@@ -206,6 +208,7 @@ public partial class HoldNote : Node2D
 		if (area == lane.ReleaseGoodZone)    tailInGood    = true;
 		if (area == lane.ReleaseEarlyZone)   tailInEarly   = true;
 		if (area == lane.ReleaseLateZone)    tailInLate    = true;
+		if (area == lane.ReleaseGoodZoneLate) tailInGood   = true;
 	}
 
 	private void OnTailExited(Area2D area)
@@ -214,5 +217,6 @@ public partial class HoldNote : Node2D
 		if (area == lane.ReleaseGoodZone)    tailInGood    = false;
 		if (area == lane.ReleaseEarlyZone)   tailInEarly   = false;
 		if (area == lane.ReleaseLateZone)    tailInLate    = false;
+		if (area == lane.ReleaseGoodZoneLate) tailInGood   = false;
 	}
 }
