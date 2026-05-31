@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://hb8jmiasq84w"]
+
+[ext_resource type="Script" uid="uid://dbhe1aspmulxg" path="res://Scripts/CasinoAttacks/GambleOption.cs" id="1_so5yv"]
+[ext_resource type="Texture2D" uid="uid://b0ngnqu00lxib" path="res://Sprites/25%Button-Sheet.png" id="2_j7qsy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piu4w"]
+atlas = ExtResource("2_j7qsy")
+region = Rect2(0, 0, 50, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ed7m"]
+atlas = ExtResource("2_j7qsy")
+region = Rect2(50, 0, 50, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upi6m"]
+atlas = ExtResource("2_j7qsy")
+region = Rect2(100, 0, 50, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kumk"]
+atlas = ExtResource("2_j7qsy")
+region = Rect2(150, 0, 50, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vvmw"]
+atlas = ExtResource("2_j7qsy")
+region = Rect2(0, 0, 50, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so5yv"]
+atlas = ExtResource("2_j7qsy")
+region = Rect2(0, 0, 50, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7qsy"]
+atlas = ExtResource("2_j7qsy")
+region = Rect2(50, 0, 50, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a5bq"]
+atlas = ExtResource("2_j7qsy")
+region = Rect2(100, 0, 50, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bi5i"]
+atlas = ExtResource("2_j7qsy")
+region = Rect2(150, 0, 50, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7a5bq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piu4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ed7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upi6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kumk")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vvmw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so5yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7qsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a5bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bi5i")
+}],
+"loop": true,
+"name": &"press",
+"speed": 5.0
+}]
+
+[node name="GambleOption25p" type="Control" unique_id=1371035215 node_paths=PackedStringArray("Sprite")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_so5yv")
+Sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1443039646]
+sprite_frames = SubResource("SpriteFrames_7a5bq")
+animation = &"press"

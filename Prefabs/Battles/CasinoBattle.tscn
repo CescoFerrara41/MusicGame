@@ -17,12 +17,18 @@
 [ext_resource type="Texture2D" uid="uid://b6g6h46bh3w4i" path="res://Sprites/HpFront.png" id="15_cfimq"]
 [ext_resource type="Script" uid="uid://bxcsxys6s1mqh" path="res://Scripts/BattleController.cs" id="16_6xm6g"]
 [ext_resource type="Script" uid="uid://bl2hr0c8nvq4j" path="res://Scripts/CasinoAttacks/GambleOptions.cs" id="16_imhiy"]
-[ext_resource type="Script" uid="uid://dbhe1aspmulxg" path="res://Scripts/CasinoAttacks/GambleOption.cs" id="17_d65ve"]
 [ext_resource type="Script" uid="uid://jw536pa761eu" path="res://Scripts/EnemyManager.cs" id="17_euhuk"]
+[ext_resource type="PackedScene" uid="uid://bumpmdsocsjq" path="res://Prefabs/CasinoAttacks/gamble_option_10p.tscn" id="17_i0gvw"]
+[ext_resource type="PackedScene" uid="uid://dkyuohkh1uch6" path="res://Prefabs/CasinoAttacks/gamble_option_15p.tscn" id="18_03iaq"]
 [ext_resource type="Script" uid="uid://c7ep660osmltv" path="res://Scripts/EnemyDisplay.cs" id="18_lt73a"]
 [ext_resource type="Texture2D" uid="uid://bkfpcuqs888a2" path="res://Sprites/greed.png" id="19_0i4kk"]
+[ext_resource type="PackedScene" uid="uid://bvm6qa3gbb8pv" path="res://Prefabs/CasinoAttacks/gamble_option_20p.tscn" id="19_h6qc5"]
 [ext_resource type="Script" uid="uid://dhgxjbswxiu15" path="res://Scripts/AttackManager.cs" id="20_6whru"]
+[ext_resource type="PackedScene" uid="uid://hb8jmiasq84w" path="res://Prefabs/CasinoAttacks/gamble_option_25p.tscn" id="20_j0pyl"]
+[ext_resource type="Texture2D" uid="uid://cfk4tvad3wbkw" path="res://Sprites/GambleCursor-Sheet.png" id="21_03iaq"]
+[ext_resource type="PackedScene" uid="uid://bdc8t021sa6u2" path="res://Prefabs/CasinoAttacks/heads_option.tscn" id="21_j0pyl"]
 [ext_resource type="PackedScene" uid="uid://ybkhtfekbpyj" path="res://Prefabs/WizardAttacks/criss_cross_attack.tscn" id="21_oiqha"]
+[ext_resource type="PackedScene" uid="uid://cjgq0vlcrw2s8" path="res://Prefabs/CasinoAttacks/tails_option.tscn" id="22_cemi8"]
 [ext_resource type="PackedScene" uid="uid://bn1d7cdkbusxh" path="res://Prefabs/WizardAttacks/two_column_walls.tscn" id="22_ltepg"]
 [ext_resource type="PackedScene" uid="uid://bww33hcywtxxl" path="res://Prefabs/WizardAttacks/two_portal_attack.tscn" id="23_0j12o"]
 [ext_resource type="PackedScene" uid="uid://bxvhnfkmde1l0" path="res://Prefabs/WizardAttacks/rapid_portal_attack.tscn" id="24_dssla"]
@@ -65,7 +71,49 @@
 [ext_resource type="Texture2D" uid="uid://bbodrn60yyk7i" path="res://Sprites/BluePlayerSoul.png" id="61_66ftj"]
 [ext_resource type="AudioStream" uid="uid://3vwkiabfv5wy" path="res://Music/WizardBattleNew.mp3" id="62_kfw8x"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_03iaq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6qc5"]
+atlas = ExtResource("21_03iaq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0pyl"]
+atlas = ExtResource("21_03iaq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cemi8"]
+atlas = ExtResource("21_03iaq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy60k"]
+atlas = ExtResource("21_03iaq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlm5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6qc5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0pyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cemi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy60k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy60k")
+}],
+"loop": true,
+"name": &"press",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_763g1"]
 animations = [{
@@ -713,26 +761,31 @@ theme_override_font_sizes/normal_font_size = 8
 text = "20/20"
 horizontal_alignment = 1
 
-[node name="GambleOptions" type="Control" parent="BattleUI" unique_id=1192345373]
+[node name="GambleOptions" type="Control" parent="BattleUI" unique_id=1192345373 node_paths=PackedStringArray("CursorSprite")]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 160.0
+offset_top = 25.0
+offset_right = 200.0
+offset_bottom = 65.0
 script = ExtResource("16_imhiy")
+WagerOptionScenes = Array[PackedScene]([ExtResource("17_i0gvw"), ExtResource("18_03iaq"), ExtResource("19_h6qc5"), ExtResource("20_j0pyl")])
+CoinOptionScenes = Array[PackedScene]([ExtResource("21_j0pyl"), ExtResource("22_cemi8")])
+CursorSprite = NodePath("AnimatedSprite2D")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BattleUI/GambleOptions" unique_id=748446140]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -100.0
+offset_top = 12.0
+offset_right = 100.0
+offset_bottom = 52.0
+theme_override_constants/separation = 64
+alignment = 1
 
-[node name="GambleOption" type="Control" parent="BattleUI/GambleOptions" unique_id=971717315]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("17_d65ve")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BattleUI/GambleOptions/GambleOption" unique_id=638203348]
-sprite_frames = SubResource("SpriteFrames_03iaq")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BattleUI/GambleOptions" unique_id=2141718295]
+sprite_frames = SubResource("SpriteFrames_jlm5s")
+animation = &"press"
 
 [node name="BattleController" type="Node2D" parent="." unique_id=851175532 node_paths=PackedStringArray("battleBox")]
 script = ExtResource("16_6xm6g")

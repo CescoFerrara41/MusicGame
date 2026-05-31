@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bdc8t021sa6u2"]
+
+[ext_resource type="Script" uid="uid://dbhe1aspmulxg" path="res://Scripts/CasinoAttacks/GambleOption.cs" id="1_80ufy"]
+[ext_resource type="Texture2D" uid="uid://br8sc62t7mo6f" path="res://Sprites/coinflip-Sheet.png" id="2_luklx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xwf5"]
+atlas = ExtResource("2_luklx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm1yh"]
+atlas = ExtResource("2_luklx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r7jf"]
+atlas = ExtResource("2_luklx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2jek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xwf5")
+}],
+"loop": true,
+"name": &"hover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm1yh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r7jf")
+}],
+"loop": true,
+"name": &"press",
+"speed": 5.0
+}]
+
+[node name="HeadsOption" type="Control" unique_id=1748026353 node_paths=PackedStringArray("Sprite")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_80ufy")
+Sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1315161693]
+sprite_frames = SubResource("SpriteFrames_p2jek")
+animation = &"press"

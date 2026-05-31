@@ -1,13 +1,11 @@
 using Godot;
 
 /// <summary>
-/// Attach this to each of the 4 pre-placed option nodes in your GambleOptions scene.
-/// Each one owns its own AnimatedSprite2D with "idle" and "hover" animations.
+/// A single selectable option. Each option is its own unique scene with its own
+/// AnimatedSprite2D. No label or setup needed — the sprite IS the option.
 ///
-///   Option10  (Control) ← GambleOption.cs, unique sprite for 10%
-///   Option15  (Control) ← GambleOption.cs, unique sprite for 15%
-///   Option20  (Control) ← GambleOption.cs, unique sprite for 20%
-///   Option25  (Control) ← GambleOption.cs, unique sprite for 25%
+///   GambleOption (Control)
+///     └── AnimatedSprite2D   ← needs "idle", "hover", and "press" animations
 /// </summary>
 public partial class GambleOption : Control
 {
@@ -19,6 +17,7 @@ public partial class GambleOption : Control
 		SetIdle();
 	}
 
-	public void SetHover() => Sprite?.Play("hover");
 	public void SetIdle()  => Sprite?.Play("idle");
+	public void SetHover() => Sprite?.Play("hover");
+	public void SetPress() => Sprite?.Play("press");
 }
